@@ -1,1 +1,140 @@
 @import 'colors';
+@import 'navbar';
+@import 'footer';
+
+$font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
+
+@mixin grid-main-perso($var: ""){
+    background-color: $--color-1;
+    width: 100%;
+    height: auto;
+    place-content: center;
+    grid-template-areas: var;
+}
+@mixin col-descuadra(){
+    background-color: 0;
+    border: 0;
+}
+@mixin texto-sobre-img-mixin($x, $y, $w, $h1, $h2){
+    position: absolute;
+    transform: translate($x, $y);
+    text-align: center;
+    width: $w;
+    h2{
+        color: $--color-1;
+        font-size: $h1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    p{
+        color: $--color-2;
+        font-size: $h2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.grid-main-inicio{
+    @include grid-main-perso(
+                "container-int"
+                "foto-larga1"
+                "descuadra-1"
+                "tabla-mid-grid"
+                "familias-olfativas"
+                "descuadra-2"
+                );
+    gap: 10px;
+    padding-inline: 0 !important;
+
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.container-interactivo{
+    grid-area: container-int;
+    margin-top: 40px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #1A1A1A;
+    .div-titulo{
+        text-align: center;
+        h1{
+            padding-inline: 2% ;
+            color: $--color-2;
+            font-size: 5.5em;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            font-weight: bold;
+        }
+    }
+}
+
+.familias-olfativas{
+    grid-area: familias-olfativas;
+    .row-card{
+        justify-content: center;
+        gap: 2%;
+        img {
+            width: 100%;
+            height: 250px; 
+            padding: 2%;
+            border-radius: 25px;
+            object-fit: cover;
+            object-position: center; 
+        }
+    }
+}
+.titulo-familias{
+    text-align: center;
+    h1{
+        font-size: 5.5em;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+
+
+
+.container-fotos{
+    display: flex;
+    width: 100%;
+    height: 600px;
+    padding: 1%;
+    img{
+        width: 0;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: .6;
+        transition: .5s ease;
+    }
+}
+.container-fotos img:hover{
+    cursor: crosshair;
+    width: 45%;
+    opacity: 1;
+    filter: contrast(130%);
+}
+.container-foto{
+    display: flex;
+}
+#carouselPerfumes img{
+    flex-grow: 1;
+    object-fit: cover;
+}
+
+.texto-sobre-img-1{
+    @include texto-sobre-img-mixin(8%, -300%, 43%, 3.5em, 1.95em);
+}
+.texto-sobre-img-2{
+    @include texto-sobre-img-mixin(120%, -320%, 43%, 3.5em, 1.6em);
+}
+.texto-sobre-img-3{
+    @include texto-sobre-img-mixin(10%, -155%, 40%, 4.7em, 1.8em);
+}
+.texto-sobre-img-4{
+    @include texto-sobre-img-mixin(10%, -120%, 45%, 3.7em, 2.1em);
+    p{
+        color: $--color-1;
+    }
+}

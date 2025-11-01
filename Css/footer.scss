@@ -1,0 +1,40 @@
+footer{
+    background-color: $--Neutro-oscuro;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    ul{
+        list-style-type: none;
+    }
+    li{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 1.5em;
+        color: $--color-3 !important;
+        a{
+            text-decoration: none;
+            color: $--color-2 !important;
+            font-size: 0.9em;
+        }
+        i{
+            font-size: 1.2em;
+            color: $--color-2;
+        }
+    }
+    a{
+        :hover{
+            color: $--Complementario !important;
+            font-size: 1em;
+            transition: 0.4s;
+        }
+    }
+}
+
+#espacio-footer{
+    font-size: 1.2em;
+    padding: 6%;
+}
+
+#footer-2-ini p{
+    text-align: center;
+}
