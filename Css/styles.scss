@@ -152,10 +152,10 @@ img{
 }
 
 .texto-sobre-img-1{
-    @include texto-sobre-img-mixin(8%, -300%, 43%, 3.5em, 1.95em);
+    @include texto-sobre-img-mixin(18%, -200%, 45%, 3.5em, 1.95em);
 }
 .texto-sobre-img-2{
-    @include texto-sobre-img-mixin(120%, -320%, 43%, 3.5em, 1.6em);
+    @include texto-sobre-img-mixin(100%, -220%, 43%, 3.5em, 1.6em);
 }
 .texto-sobre-img-3{
     @include texto-sobre-img-mixin(10%, -155%, 40%, 4.7em, 1.8em);
