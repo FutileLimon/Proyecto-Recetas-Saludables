@@ -90,6 +90,7 @@ footer {
   text-align: center;
 }
 footer ul {
+  margin: 0 auto;
   padding-top: 10px;
   list-style-type: none;
 }
