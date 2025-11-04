@@ -146,7 +146,7 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
-  margin: 6px 6px;
+  margin: 0 auto;
   color: #2C2C2C;
 }
 
@@ -166,6 +166,7 @@ p {
 img {
   width: 100%;
   height: 100%;
+  justify-content: center;
 }
 
 .titulo {
