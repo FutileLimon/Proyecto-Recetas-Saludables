@@ -186,3 +186,18 @@ img{
 p{
     text-align: justify;
 }
+
+.scroll-element {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+.slide-left {
+    transform: translateX(-80px);
+}
+.slide-right {
+    transform: translateX(80px);
+}
+.scroll-element.scrolled {
+    opacity: 1;
+    transform: translateX(0);
+}
