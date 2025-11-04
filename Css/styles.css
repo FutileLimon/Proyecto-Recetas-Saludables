@@ -90,10 +90,11 @@ footer {
   text-align: center;
 }
 footer ul {
+  padding-top: 10px;
   list-style-type: none;
 }
 footer li {
-  padding-top: 15px;
+  padding-top: 30px;
   padding-bottom: 15px;
   font-size: 1.5em;
   color: #F5F5F5 !important;
@@ -115,7 +116,7 @@ footer a :hover {
 
 #espacio-footer {
   font-size: 1.2em;
-  padding: 6%;
+  padding: 2%;
 }
 
 #footer-2-ini p {
