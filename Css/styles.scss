@@ -153,13 +153,13 @@ img{
 }
 
 .texto-sobre-img-1{
-    @include texto-sobre-img-mixin(18%, -200%, 45%, 3.5em, 1.95em);
+    @include texto-sobre-img-mixin(30%, -180%, 65%, 3.5em, 2.85em);
 }
 .texto-sobre-img-2{
-    @include texto-sobre-img-mixin(100%, -220%, 43%, 3.5em, 1.6em);
+    @include texto-sobre-img-mixin(30%, -180%, 63%, 3.5em, 3.2em);
 }
 .texto-sobre-img-3{
-    @include texto-sobre-img-mixin(10%, -155%, 40%, 4.7em, 1.8em);
+    @include texto-sobre-img-mixin(10%, -215%, 50%, 4.7em, 2.8em);
 }
 .texto-sobre-img-4{
     @include texto-sobre-img-mixin(13%, -170%, 55%, 3.7em, 3.3em);
