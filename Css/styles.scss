@@ -28,6 +28,7 @@ $font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
     p{
         color: $--Complementario;
         font-size: $h2;
+        font-weight: bold;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 }
@@ -157,15 +158,18 @@ img{
     @include texto-sobre-img-mixin(30%, -180%, 65%, 3.5em, 2.85em);
 }
 .texto-sobre-img-2{
-    @include texto-sobre-img-mixin(30%, -180%, 63%, 3.5em, 3.2em);
+    @include texto-sobre-img-mixin(30%, -150%, 63%, 3.5em, 3.2em);
+    p{
+        color: $--color-2;
+    }
 }
 .texto-sobre-img-3{
     @include texto-sobre-img-mixin(10%, -215%, 50%, 4.7em, 2.8em);
 }
 .texto-sobre-img-4{
-    @include texto-sobre-img-mixin(13%, -170%, 55%, 3.7em, 3.3em);
+    @include texto-sobre-img-mixin(13%, -155%, 55%, 3.7em, 3.3em);
     p{
-        color: $--color-1;
+        color: $--color-2;
     }
 }
 .section-ini{
