@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recetas Saludables</title>
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+    <!-- Ícono -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/541/541686.png">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="Css/index.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar nav-ini navbar-expand-lg shadow-lg nav-textos-blancos" id="navbar-r">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/541/541686.png" alt="Logo">
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="center-span">
+                <span>Gran Pollazo Vegano xD</span>
+            </div>
+            <div class="menu-usuario dropdown">
+                <button class="boton-usuario" id="dropdownUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Usuario" class="icono-usuario">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" id="menuUsuario">
+                    <li><a class="dropdown-item" id="opcionLogin" href="Login.html">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" id="opcionRegistro" href="Registro.html">Registrarse</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="seccion">
+        <div class="contenedor hero">
+        <div class="hero-interior">
+            <div>
+            <h1 class="titulo-vice">
+                <span class="contorno">RECETAS SALUDABLES</span><br>
+                <span class="relleno">Y MUCHO MÁS</span>
+            </h1>
+            <p class="subtitulo-vice">
+                Bienvenido al futuro de la cocina sana 🌱<br>
+                Explora recetas deliciosas, naturales y llenas de color.
+            </p>
+            <div class="acciones-hero">
+                <button class="btn primario">Ver recetas populares</button>
+                <button class="btn">Guía nutricional</button>
+            </div>
+            </div>
+                <div class="hero-arte">
+                <div class="poster"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- FLYERS DESTACADOS -->
+    <section class="seccion">
+        <div class="contenedor flyers">
+        <article class="flyer">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1400&auto=format&fit=crop" alt="Bowl fresco">
+            <span class="etiqueta">Nuevo</span>
+            <div class="pie-flyer">
+            <h3 class="titulo">Bowls Proteicos</h3>
+            <span class="meta">15 min · 420 kcal · Fácil</span>
+            </div>
+        </article>
+
+        <article class="flyer">
+            <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?q=80&w=1400&auto=format&fit=crop" alt="Smoothie verde">
+            <span class="etiqueta">Tendencia</span>
+            <div class="pie-flyer">
+            <h3 class="titulo">Smoothies Neón</h3>
+            <span class="meta">Detox · Antioxidantes</span>
+            </div>
+        </article>
+
+        <article class="flyer">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1400&auto=format&fit=crop" alt="Meal prep">
+            <span class="etiqueta">Colección</span>
+            <div class="pie-flyer">
+            <h3 class="titulo">Meal Prep Vice</h3>
+            <span class="meta">Batch cooking semanal</span>
+            </div>
+        </article>
+        </div>
+    </section>
+
+    <!-- TARJETAS DE RECETAS DINÁMICAS -->
+    <section class="seccion">
+        <div class="contenedor">
+        <header class="encabezado-tarjetas">
+            <div>
+            <div class="subtitulo">Populares</div>
+            <h2 class="titulo">Recetas destacadas de la semana</h2>
+            </div>
+            <div class="acciones-tarjeta">
+            <button class="btn">Filtrar</button>
+            <button class="btn">Ordenar</button>
+            </div>
+        </header>
+
+        <div class="tarjetas"></div>
+
+        <!-- Botón Ver Más -->
+        <div class="contenedor-ver-mas">
+            <button id="verMas" class="btn primario">Ver más recetas</button>
+        </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <div class="contenedor">
+        <span>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025 </span>
+        </div>
+    </footer>
+    <!-- === Modal Iniciar Sesión === -->
+    <div id="modalLogin" class="modal-login oculto">
+    <div class="contenido-login">
+        <button class="cerrar-login">×</button>
+        <h2>Iniciar sesión</h2>
+        <form id="formLogin">
+        <label>Correo electrónico</label>
+        <input type="email" id="correoLogin" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="claveLogin" required>
+
+        <button type="submit" class="btn primario">Ingresar</button>
+        </form>
+    </div>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src="Js/index2.js"></script>
+    <script src="Js/navbar.js"></script>
+</body>
+</html>
