@@ -529,3 +529,10 @@ nav img:hover {
     cursor: default;
 }
 
+.oculto { 
+    display: none; 
+}
+
+.modal-login { 
+    z-index: 3000; 
+}

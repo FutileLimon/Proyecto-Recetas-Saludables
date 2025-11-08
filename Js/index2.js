@@ -119,72 +119,101 @@ botonVerMas.addEventListener('click', mostrarRecetas);
 cargarRecetas();
 
 // === GESTIÓN DE SESIÓN ===
-// Elementos del menú
+// refs del menú
 const menuUsuario = document.getElementById('menuUsuario');
 const opcionLogin = document.getElementById('opcionLogin');
 const opcionRegistro = document.getElementById('opcionRegistro');
 
-// Verificar si ya hay sesión activa al cargar
+// refs del modal de login
+const modalLogin = document.getElementById('modalLogin');
+const cerrarLogin = document.querySelector('.cerrar-login');
+const formLogin = document.getElementById('formLogin');
+
+// helper: abrir/cerrar modal login
+function abrirModalLogin() {
+    if (!modalLogin) return;
+    modalLogin.classList.remove('oculto');
+    document.body.style.overflow = 'hidden';
+}
+function cerrarModalLogin() {
+    if (!modalLogin) return;
+    modalLogin.classList.add('oculto');
+    document.body.style.overflow = 'auto';
+}
+
+// al cargar: restaurar sesión si existe
 document.addEventListener('DOMContentLoaded', () => {
     const usuario = JSON.parse(localStorage.getItem('usuarioActivo'));
-    if (usuario) {
+    if (usuario && usuario.correo) {
         actualizarMenuSesion(usuario.correo);
     }
 });
 
-// Mostrar modal de login cuando se hace clic en "Iniciar sesión"
-if (opcionLogin) {
+// click en “Iniciar sesión” → abrir modal (sin navegar)
+    if (opcionLogin) {
     opcionLogin.addEventListener('click', (e) => {
         e.preventDefault();
-        modalLogin.classList.remove('oculto');
+        abrirModalLogin();
     });
 }
 
-// Cerrar modal login
-cerrarLogin.addEventListener('click', () => modalLogin.classList.add('oculto'));
-modalLogin.addEventListener('click', (e) => {
-    if (e.target === modalLogin) modalLogin.classList.add('oculto');
-});
+// cerrar modal con X
+if (cerrarLogin) {
+    cerrarLogin.addEventListener('click', cerrarModalLogin);
+}
+// cerrar modal clickeando fuera del contenido
+if (modalLogin) {
+    modalLogin.addEventListener('click', (e) => {
+        if (e.target === modalLogin) cerrarModalLogin();
+    });
+    }
 
-// Guardar usuario al iniciar sesión
-formLogin.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const correo = document.getElementById('correoLogin').value;
-    const clave = document.getElementById('claveLogin').value;
+// guardar usuario al iniciar sesión
+if (formLogin) {
+    formLogin.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const correo = document.getElementById('correoLogin').value.trim();
+        const clave = document.getElementById('claveLogin').value;
 
-    // Guardar datos simulando una sesión
-    localStorage.setItem('usuarioActivo', JSON.stringify({ correo, clave }));
+        if (!correo || !clave) return; // validación básica
+        localStorage.setItem('usuarioActivo', JSON.stringify({ correo, clave }));
+        actualizarMenuSesion(correo);
+        cerrarModalLogin();
+        alert(`✅ Bienvenido ${correo}`);
+    });
+}
 
-    // Actualizar el menú
-    actualizarMenuSesion(correo);
-
-    modalLogin.classList.add('oculto');
-    alert(`✅ Bienvenido ${correo}`);
-});
-
-// === Función para actualizar el menú después de iniciar sesión ===
+// actualizar opciones del menú cuando hay sesión
 function actualizarMenuSesion(correo) {
+    if (!menuUsuario) return;
     menuUsuario.innerHTML = `
         <li><span class="dropdown-item correo-usuario">${correo}</span></li>
         <li><a class="dropdown-item" id="opcionMisRecetas" href="#">Mis Recetas</a></li>
         <li><a class="dropdown-item" id="opcionCerrarSesion" href="#">Cerrar sesión</a></li>
     `;
-
-    // Asignar funcionalidad a las nuevas opciones
-    document.getElementById('opcionCerrarSesion').addEventListener('click', cerrarSesion);
-    document.getElementById('opcionMisRecetas').addEventListener('click', verMisRecetas);
+    document.getElementById('opcionCerrarSesion')?.addEventListener('click', cerrarSesion);
+    document.getElementById('opcionMisRecetas')?.addEventListener('click', verMisRecetas);
 }
 
-// === Cerrar sesión ===
+// cerrar sesión
 function cerrarSesion() {
     localStorage.removeItem('usuarioActivo');
     alert('👋 Sesión cerrada');
-    location.reload(); // recarga para restaurar el menú original
+    // restaurar menú original sin recargar toda la página:
+    if (menuUsuario) {
+        menuUsuario.innerHTML = `
+        <li><a class="dropdown-item" id="opcionLogin" href="Login.html">Iniciar sesión</a></li>
+        <li><a class="dropdown-item" id="opcionRegistro" href="Registro.html">Registrarse</a></li>
+        `;
+        // re-vincular listener para el nuevo “Iniciar sesión”
+        document.getElementById('opcionLogin')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        abrirModalLogin();
+        });
+    }
 }
 
-// === Ver mis recetas (de momento, solo ejemplo) ===
+// placeholder “Mis Recetas”
 function verMisRecetas() {
     alert('🍽 Aquí aparecerán tus recetas guardadas.');
 }
-
-
