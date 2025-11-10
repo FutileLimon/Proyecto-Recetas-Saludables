@@ -375,7 +375,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   text-align: justify;
-  margin: 7px 7px;
+  margin: 3px 3px;
   padding: 6px;
   font-size: 1.19em;
   color: #999999;
@@ -467,84 +467,6 @@ img {
   object-fit: cover;
 }
 
-.texto-sobre-img-1 {
-  position: absolute;
-  transform: translate(30%, -180%);
-  text-align: center;
-  width: 65%;
-}
-.texto-sobre-img-1 h2 {
-  color: #FEFFFC;
-  font-size: 3.5em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.texto-sobre-img-1 p {
-  color: #FFA45B;
-  font-size: 2.85em;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.texto-sobre-img-2 {
-  position: absolute;
-  transform: translate(30%, -150%);
-  text-align: center;
-  width: 63%;
-}
-.texto-sobre-img-2 h2 {
-  color: #FEFFFC;
-  font-size: 3.5em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.texto-sobre-img-2 p {
-  color: #FFA45B;
-  font-size: 3.2em;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.texto-sobre-img-2 p {
-  color: #A8E6CF;
-}
-
-.texto-sobre-img-3 {
-  position: absolute;
-  transform: translate(10%, -215%);
-  text-align: center;
-  width: 50%;
-}
-.texto-sobre-img-3 h2 {
-  color: #FEFFFC;
-  font-size: 4.7em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.texto-sobre-img-3 p {
-  color: #FFA45B;
-  font-size: 2.8em;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.texto-sobre-img-4 {
-  position: absolute;
-  transform: translate(13%, -155%);
-  text-align: center;
-  width: 55%;
-}
-.texto-sobre-img-4 h2 {
-  color: #FEFFFC;
-  font-size: 3.7em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-.texto-sobre-img-4 p {
-  color: #FFA45B;
-  font-size: 3.3em;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.texto-sobre-img-4 p {
-  color: #A8E6CF;
-}
-
 .section-ini {
   margin-top: 0%;
   margin-bottom: 0%;
@@ -598,6 +520,35 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: block;
   z-index: 1000;
+}
+
+.bloque-imagen {
+  position: relative;
+  overflow: hidden;
+}
+
+.bloque-imagen img {
+  width: 100%;
+  height: 600px;
+  display: block;
+  object-fit: cover;
+}
+
+.texto-sobre-img {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.texto-sobre-img p {
+  color: #A8E6CF;
+  font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
+  font-weight: 600;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

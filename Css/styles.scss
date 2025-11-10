@@ -16,23 +16,6 @@ $font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
     background-color: 0;
     border: 0;
 }
-@mixin texto-sobre-img-mixin($x, $y, $w, $h1, $h2){
-    position: absolute;
-    transform: translate($x, $y);
-    text-align: center;
-    width: $w;
-    h2{
-        color: $--color-1;
-        font-size: $h1;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-    p{
-        color: $--Complementario;
-        font-size: $h2;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    }
-}
 
 .grid-main-inicio{
     @include grid-main-perso(
@@ -69,7 +52,7 @@ h1, h2, h3, h4, h5, h6{
 
 p{
     text-align: justify;
-    margin: 7px 7px;
+    margin: 3px 3px;
     padding: 6px;
     font-size: 1.19em;
     color: $--color-text-p;
@@ -155,24 +138,6 @@ img{
     object-fit: cover;
 }
 
-.texto-sobre-img-1{
-    @include texto-sobre-img-mixin(30%, -180%, 65%, 3.5em, 2.85em);
-}
-.texto-sobre-img-2{
-    @include texto-sobre-img-mixin(30%, -150%, 63%, 3.5em, 3.2em);
-    p{
-        color: $--color-2;
-    }
-}
-.texto-sobre-img-3{
-    @include texto-sobre-img-mixin(10%, -215%, 50%, 4.7em, 2.8em);
-}
-.texto-sobre-img-4{
-    @include texto-sobre-img-mixin(13%, -155%, 55%, 3.7em, 3.3em);
-    p{
-        color: $--color-2;
-    }
-}
 .section-ini{
     margin-top: 0%;
     margin-bottom: 0%;
@@ -222,4 +187,35 @@ p{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: block;
     z-index: 1000;
+}
+
+
+.bloque-imagen {
+    position: relative;
+    overflow: hidden;
+}
+
+.bloque-imagen img {
+    width: 100%;
+    height: 600px; //altura imagen
+    display: block;
+    object-fit: cover;
+}
+
+
+.texto-sobre-img {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 6rem 4rem;
+    text-align: center;
+}
+
+.texto-sobre-img p {
+    color: $--color-2;
+    font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
+    font-weight: 600;
+    margin: 0;
 }
