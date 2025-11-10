@@ -1,0 +1,77 @@
+@import 'colors';
+/* === Contenedor de tarjetas dinámicas === */
+.tarjetas {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 1rem;
+}
+
+/* === Tarjeta individual === */
+.tarjeta-receta {
+    background: $--Primario;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.06);
+    overflow: hidden;
+    transition: .3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+
+.tarjeta-receta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.45);
+}
+
+
+.imagen-receta {
+    aspect-ratio: 16/10;
+    background-size: cover;
+    background-position: center;
+    transition: .4s ease;
+}
+
+.imagen-receta:hover { 
+    filter: brightness(1.1) saturate(1.1); 
+}
+
+.cuerpo-receta { 
+    padding: 1rem; 
+}
+
+.subtitulo { 
+    color: $--Secundario; 
+    font-size: .8rem; 
+    text-transform: uppercase; 
+}
+
+.acciones-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.enlace {
+    color: $--Complementario;
+    text-decoration: none;
+    border-bottom: 1px dashed $--Complementario;
+    font-weight: 600;
+}
+
+.enlace:hover { 
+    color: $--Neutro-oscuro; 
+}
+
+/* === Centrar el botón "Ver más recetas" === */
+.contenedor-ver-mas {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+#verMas {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
