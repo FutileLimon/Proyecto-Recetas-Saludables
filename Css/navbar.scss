@@ -55,7 +55,7 @@ nav{
 nav a:hover{
     color: $--Complementario !important;
     transition: 0.6s ease;
-    transform: scale(2.16);
+    transform: scale(1.1);
 }
 
 nav img:hover{
@@ -81,4 +81,63 @@ nav img:hover{
     span{
         color: $--Neutro-oscuro !important;
     }
+}
+
+//parte 2
+nav .center-span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+nav span {
+    font-size: 1.1em;
+    font-weight: thin;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+//menu navbar
+
+/* === Menú de usuario === */
+.menu-usuario {
+    position: relative;
+}
+
+.boton-usuario {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    min-width: 180px !important;
+    width: auto;
+    background: $--tarjeta;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    box-shadow: $--color-2 !important;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem !important;
+    transform-origin: top right;
+    animation: aparecerMenu 0.2s ease-out;
+    backdrop-filter: blur(15px) !important;
+}
+
+/* Animación suave */
+@keyframes aparecerMenu {
+    from { opacity: 0; transform: scale(0.9) translateY(-5px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Ítems del menú */
+.dropdown-item {
+    color: var(--texto);
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    background: transparent !important;
+    border: none !important;
+    transition: color 0.3s ease;
 }
