@@ -526,12 +526,28 @@ p {
   z-index: 1000;
 }
 
-.bloque-imagen {
+.bloque-imagen-1 .bloque-imagen-2 .bloque-imagen-3 {
   position: relative;
   overflow: hidden;
 }
 
-.bloque-imagen img {
+.bloque-imagen-1 img {
+  width: 100%;
+  height: 600px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bloque-imagen-2 img {
+  width: 100%;
+  height: 600px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bloque-imagen-3 img {
   width: 100%;
   height: 600px;
   display: block;
@@ -543,8 +559,7 @@ p {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: left;
   padding: 6rem 4rem;
   text-align: center;
 }
