@@ -5,8 +5,7 @@
   top: 0;
   z-index: 1000;
   line-height: 50px;
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border: 0;
 }
 
@@ -120,8 +119,7 @@ nav span {
   margin-top: 0.5rem !important;
   transform-origin: top right;
   animation: aparecerMenu 0.2s ease-out;
-  -webkit-backdrop-filter: blur(15px) !important;
-          backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
   background: transparent !important;
 }
 
@@ -274,7 +272,7 @@ footer a :hover {
 
 /* === Tarjeta individual === */
 .tarjeta-receta {
-  background: #5CB85C;
+  background: #93E5AB;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
@@ -423,9 +421,8 @@ img {
   height: 250px;
   padding: 2%;
   border-radius: 25px;
-  -o-object-fit: cover;
   object-fit: cover;
-
+  object-position: center;
 }
 
 .titulo-familias {
@@ -446,7 +443,6 @@ img {
 .container-fotos img {
   width: 0;
   flex-grow: 1;
-  -o-object-fit: cover;
   object-fit: cover;
   opacity: 0.6;
   transition: 0.5s ease;
@@ -527,7 +523,6 @@ p {
   width: 100%;
   height: 600px;
   display: block;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -535,7 +530,6 @@ p {
   width: 100%;
   height: 600px;
   display: block;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -543,7 +537,6 @@ p {
   width: 100%;
   height: 600px;
   display: block;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -561,4 +554,6 @@ p {
   font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
   font-weight: 600;
   margin: 0;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
