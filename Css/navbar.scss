@@ -115,7 +115,6 @@ nav span {
 .dropdown-menu {
     min-width: 180px !important;
     width: auto;
-    background: $--tarjeta;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     box-shadow: $--color-2 !important;
@@ -134,7 +133,6 @@ nav span {
 
 /* Ítems del menú */
 .dropdown-item {
-    color: var(--texto);
     padding: 0.6rem 1.2rem;
     font-weight: 500;
     background: transparent !important;
