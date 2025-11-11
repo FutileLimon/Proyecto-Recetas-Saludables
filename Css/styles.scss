@@ -6,7 +6,7 @@
 $font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
 
 @mixin grid-main-perso($var: ""){
-    background-color: $--color-1;
+    background: $--titulo;
     width: 100%;
     height: auto;
     place-content: center;

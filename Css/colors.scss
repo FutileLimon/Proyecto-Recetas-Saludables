@@ -1,23 +1,23 @@
-$--color-1 : #FEFFFC;
-$--color-2 : #A8E6CF;
-$--color-3 : #F5F5F5;
-$--color-text-p: #999999;
-//nueva pagina
-$--Primario	:   #93E5AB;	//Botones principales, íconos, acentos visuales
-$--Secundario:	#A8E6CF;	//Fondos suaves, tarjetas de recetas, hover states
-$--Neutro-claro	:#FAFAF7;//Fondo principal de la página
-$--Neutro-medio	:	#E0E0E0;  //Líneas divisorias, bordes, fondos alternos
-$--Neutro-oscuro :	#2E3D34; //	Texto principal (mejor que negro, más natural)
-$--Complementario:	#FFA45B;	//Llamados a la acción secundarios o etiquetas de recetas
-$--Complementario2:	#00241B;	//Llamados a la acción secundarios o etiquetas de recetas
+$--color-1 : #F9F5EF;          // Fondo general claro tipo lino
+$--color-2 : #E4C59E;          // Arena cálida, transmite naturalidad
+$--color-3 : #FAF7F2;          // Fondo alterno, sutil contraste
+$--color-text-p: #4C4B46;      // Gris carbón suave, legible y elegante
 
+// nueva página
+$--Primario	: #E76F51;         // Coral terroso (botones principales)
+$--Secundario: #F4A261;        // Acento melocotón / hover cálido
+$--Neutro-claro	: #FFFBF7;      // Fondo base crema
+$--Neutro-medio	: #E0DED8;      // Líneas y divisores suaves
+$--Neutro-oscuro : #2A2A28;     // Texto principal, moderno sin ser negro puro
+$--Complementario: #2A9D8F;     // Verde azulado fresco, contraste vibrante
+$--Complementario2: #264653;    // Verde petróleo oscuro, profesional y moderno
 
-$--Fondo-nav :	#3C6E47; //nav, footer
+$--Fondo-nav : #1F2933;         // Gris azulado profundo, elegante y versátil
 
-//parte 2
-$--tarjeta: #151527; // color tarjeta navbar
-$--titulo : #0d0f0e; // color título
-$--fondo-gradiente1 : linear-gradient(180deg, rgb(0, 0, 0), $--Neutro-oscuro, $--titulo );
-$--fondo-gradiente2 : linear-gradient(180deg, rgb(0, 0, 0), $--Neutro-oscuro, $--titulo );
-
+// parte 2
+$--tarjeta: #2E3A3F;            // Fondo de tarjetas o navbar oscuro con contraste
+$--titulo : #101010;            // Títulos potentes en negro suave
+$--fondo-gradiente1 : linear-gradient(180deg, #1F2933, $--Complementario2, $--titulo);
+$--fondo-gradiente2 : linear-gradient(180deg, #1F2933, $--Complementario2, $--titulo);
+$--fondo-gradiente3 : linear-gradient(180deg, #000000, $--Complementario2, $--titulo);
 
