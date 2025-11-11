@@ -471,7 +471,7 @@ img {
 }
 
 .titulo-section {
-  background: linear-gradient(180deg, rgb(0, 0, 0) 5%, #2E3D34 70%, #0d0f0e);
+  background: linear-gradient(180deg, rgb(0, 0, 0), #2E3D34, #0d0f0e);
 }
 .titulo-section h2 {
   font-size: 6.7em;
