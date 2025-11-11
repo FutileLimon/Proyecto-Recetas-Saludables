@@ -112,3 +112,33 @@ function activarBotones() {
         });
     });
 }
+
+
+// === Cargar más recetas ===
+botonVerMas.addEventListener('click', mostrarRecetas);
+
+// === Inicializar página ===
+cargarRecetas();
+
+// === GESTIÓN DE SESIÓN ===
+// refs del menú
+const menuUsuario = document.getElementById('menuUsuario');
+const opcionLogin = document.getElementById('opcionLogin');
+const opcionRegistro = document.getElementById('opcionRegistro');
+
+// refs del modal de login
+const modalLogin = document.getElementById('modalLogin');
+const cerrarLogin = document.querySelector('.cerrar-login');
+const formLogin = document.getElementById('formLogin');
+
+// helper: abrir/cerrar modal login
+function abrirModalLogin() {
+    if (!modalLogin) return;
+    modalLogin.classList.remove('oculto');
+    document.body.style.overflow = 'hidden';
+}
+function cerrarModalLogin() {
+    if (!modalLogin) return;
+    modalLogin.classList.add('oculto');
+    document.body.style.overflow = 'auto';
+}
