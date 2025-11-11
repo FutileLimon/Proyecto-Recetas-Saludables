@@ -465,12 +465,6 @@ img {
   display: flex;
 }
 
-#carouselPerfumes img {
-  flex-grow: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .section-ini {
   margin-top: 0%;
   margin-bottom: 0%;
