@@ -49,3 +49,66 @@ function mostrarRecetas() {
 
     activarBotones();
 }
+
+
+// === Mostrar detalle en un modal ===
+async function mostrarDetalle(id) {
+    // Evita abrir más de un modal
+    if (document.querySelector('.modal')) return;
+
+    try {
+        const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const datos = await respuesta.json();
+        const receta = datos.meals[0];
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+        <div class="contenido-modal">
+            <button class="cerrar-modal">×</button>
+            <h2>${receta.strMeal}</h2>
+            <img src="${receta.strMealThumb}" alt="${receta.strMeal}">
+            <h4>Instrucciones</h4>
+            <p>${receta.strInstructions}</p>
+        </div>
+        `;
+        document.body.style.overflow = 'hidden';
+        document.body.appendChild(modal);
+
+        // Cierre del modal
+        document.querySelector('.cerrar-modal').addEventListener('click', () => modal.remove());
+        modal.addEventListener('click', e => { 
+            if (e.target === modal) {
+                modal.remove();
+                document.body.style.overflow = 'auto';
+            }
+            });
+            document.querySelector('.cerrar-modal').addEventListener('click', () => {
+            modal.remove();
+            document.body.style.overflow = 'auto';
+        });
+    } catch (error) {
+        console.error('Error al mostrar detalle de receta:', error);
+    }
+    }
+
+
+// === Activar botones “Guardar” y “Ver receta” ===
+function activarBotones() {
+    // Ver receta
+    document.querySelectorAll('.ver-receta').forEach(enlace => {
+        enlace.addEventListener('click', e => {
+        e.preventDefault();
+        mostrarDetalle(enlace.dataset.id);
+        });
+    });
+
+    // Guardar receta
+    document.querySelectorAll('.tarjeta-receta .btn').forEach(boton => {
+        boton.addEventListener('click', () => {
+        const guardado = boton.dataset.guardado === '1';
+        boton.dataset.guardado = guardado ? '0' : '1';
+        boton.textContent = guardado ? 'Guardar' : 'Guardado ✓';
+        boton.classList.toggle('primario', !guardado);
+        });
+    });
+}
