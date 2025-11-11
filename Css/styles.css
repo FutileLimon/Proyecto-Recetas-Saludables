@@ -471,15 +471,15 @@ img {
 }
 
 .titulo-section {
-  background-color: #2E3D34;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 5%, #2E3D34 70%, #0d0f0e);
 }
 .titulo-section h2 {
   font-size: 6.7em;
   font-weight: bold;
   color: #A8E6CF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-top: 6%;
-  margin-bottom: 6%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 p {

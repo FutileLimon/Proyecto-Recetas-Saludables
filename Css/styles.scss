@@ -144,14 +144,14 @@ img{
     
 }
 .titulo-section{
-    background-color: $--Neutro-oscuro;
+    background: $--fondo-gradiente;
     h2{
         font-size: 6.7em;
         font-weight: bold;
         color: $--color-2;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        margin-top: 6%;
-        margin-bottom: 6%;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
 }
 p{
@@ -193,6 +193,7 @@ p{
 .bloque-imagen {
     position: relative;
     overflow: hidden;
+    // filter: drop-shadow(0px 200px 200px rgb(0, 0, 0));
 }
 
 .bloque-imagen img {
