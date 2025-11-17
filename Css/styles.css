@@ -425,12 +425,14 @@ form button:hover {
 .formulario {
   grid-area: formulario;
   background-color: #FAF7F2;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .formulario-contacto {
   background-color: #FAF7F2;
   border: 2px solid #F4A261;
-  border-radius: 3%;
+  border-radius: 35px;
   padding: 1%;
   padding-inline: 4%;
 }
@@ -679,19 +681,30 @@ p {
 }
 
 .nosotros {
-  margin-top: 6%;
+  margin-top: 115px;
   display: grid;
   padding-inline: 3%;
   gap: 3%;
+  background-color: #E0DED8;
 }
 
 .di-part {
   display: flex;
   background-color: #E0DED8;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.di-part h2 {
+  font-size: 4rem;
+}
+.di-part p {
+  font-size: 1.6rem;
 }
 .di-part img {
   width: 100%;
   height: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  border-radius: 24px;
 }
 
 /*# sourceMappingURL=styles.css.map */

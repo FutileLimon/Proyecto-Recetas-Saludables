@@ -28,7 +28,6 @@ body {
 .hero {
     border-radius: 24px;
     background: linear-gradient(135deg, rgba(66,245,163,.1), rgba(139,92,246,.12));
-    box-shadow: 0 10px 40px rgba(0,0,0,.35);
     border: 1px solid rgba(255,255,255,.06);
     overflow: hidden;
     margin: 3rem auto;

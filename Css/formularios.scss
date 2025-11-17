@@ -72,11 +72,13 @@ form button:hover{
 .formulario{
     grid-area: formulario;
     background-color: $--color-3;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 .formulario-contacto{
     background-color: $--color-3;
     border: 2px solid $--Secundario;
-    border-radius: 3%;
+    border-radius: 35px;
     padding: 1%;
     padding-inline: 4%;
 }
