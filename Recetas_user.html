@@ -40,24 +40,16 @@
         <!--Main grid-->
         <div class="container-fluid grid-main-inicio">
 
-            <div>
-
-            </div>
-
-
-
             <!--Formulario-->
             <div class="row formulario mt-5 no-color row-contacto-1" style="display : flex;">
                 <div class="col-8 formulario-contacto shadow-lg">
                     <form class="container-6" id="form-contacto" method="POST">
                         <div class="row mb-3 py-2">
                             <div class="col-sm-12">
-                                <label class="form-label" for="Nombre">Nombres:</label>
+                                <label class="form-label" for="Nombre">Nombre del plato:</label>
                             </div>
                             <div class="col-sm-12 d-flex gap-1">
-                                <input class="form-control" type="text" id="input_nombre" name="Nombre" placeholder="Nombre" required>
-                                <input class="form-control" type="text" id="input_apellido" name="Apellidos" placeholder="Apellidos" required>
-                            </div>
+                                <input class="form-control" type="text" id="input_nombre" name="Nombre" placeholder="ej: Pollo apanado" required>                            </div>
                         </div>
 
                         <div class="row py-2">
@@ -69,99 +61,32 @@
 
                         <div class="row py-2">
                             <div class="col">
-                                <label class="form-label" for="Tel">Telefono:</label>
-                                <div class="input-group d-flex gap-1">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend">+</span>
-                                    </div>
-                                    <input class="form-control" type="text" id="Tel" name="Tel" placeholder="56 9 9999 9999">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row py-2">
-                            <div class="col-4">
-                                <label class="form-label" for="nacimiento">Fecha de nacimiento:</label>
-                            </div>
-                            <div class="col-8">
-                                <input class="form-control" type="date" id="nacimiento" name="nacimiento">
-                            </div>
-                        </div>
-
-                        <div class="row py-2">
-                            <div class="col">
                                 <label class="form-label" for="asunto">Asunto:</label>
                             </div>
                             <div class="col">
                                 <select class="form-select" name="asunto" id="asunto">
-                                    <option value="academia">academia</option>
-                                    <option value="asesoria">asesoria</option>
-                                    <option value="conversacion">conversa con nosotros</option>
+                                    <option value="academia">Carnivoro</option>
+                                    <option value="asesoria">Vegano</option>
+                                    <option value="conversacion">Vegetariano</option>
+                                    <option value="asesoria">ovolactovegetarian</option>
                                 </select>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col container">
-                                <div class="row py-2">
-                                    <label for="">¿cuanto cree que sabe sobre el tema?</label>
-                                </div>
-                                <div class="row-sm-3 py-2 d-flex">
-                                    <div class="col-1">
-                                        <label class="form-label" for="min">nada</label>
-                                    </div>
-                                    <div class="col-10">
-                                        <input class="form-range" type="range" min="0" max="8" id="rango" name="rango">
-                                    </div>
-                                    <div class="col-1">
-                                        <label class="form-label" for="max">experto</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row py-2">
-                            <div class="form-row form-sexo">
-                                <div class="col"><label class="form-label" for="sexo">Sexo:</label></div>
-                                <div class="col-sm-4 d-flex gap-2">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sexo" id="masc" value="masculino">
-                                        <label class="form-check-label" for="masc">Masculino</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sexo" id="fem" value="femenino">
-                                        <label class="form-check-label" for="fem">Femenino</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sexo" id="otro" value="otro">
-                                        <label class="form-check-label" for="otro">Otro</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row py-2">
                             <div class="col">
-                                <label class="form-label" for="archivos">Archivo:</label>
+                                <label class="form-label" for="archivos">Imagen Referencial:</label>
                             </div>
                             <div class="col">
                                 <label class="form-label" for="archivos"></label>
-                                <input class="form-control" type="file" id="archivos" name="archivos" multiple>
+                                <input class="form-control" type="file" id="archivos" name="archivos">
                             </div>
                         </div>
+
                         <div class="row py-2">
-                            <div class="col"><label class="form-label" for="mensaje">Mensaje:</label></div>
+                            <div class="col"><label class="form-label" for="mensaje">Receta Detallada:</label></div>
                             <div class="col"><textarea class="form-control" name="mensaje" id="mensaje" rows="6" cols="40" placeholder="inserte texto"></textarea></div>
                         </div>
-                        <div class="row py-2">
-                            <div class="form-checkbox">
-                                <div class="col">
-                                    <input id="sub-correo" type="checkbox" name="sub-correo">
-                                    <label class="form-check-label" for="sub-correo">¿Quiere subscribirse a actualizaciones mediante su correo?</label>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary boton-form-contacto" type="submit">Enviar</button>
+                        <button class="btn btn-primary boton-form-contacto" type="submit">Subir Receta</button>
                     </form>
                 </div>
 

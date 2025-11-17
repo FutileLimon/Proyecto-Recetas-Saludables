@@ -230,3 +230,20 @@ p{
     margin: 0;
 }
 
+
+//pagina nosotros
+.nosotros{
+    margin-top: 6%;
+    display: grid;
+    padding-inline: 3%;
+    gap: 3%;
+}
+.di-part{
+    display: flex;
+    background-color: $--Neutro-medio;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+

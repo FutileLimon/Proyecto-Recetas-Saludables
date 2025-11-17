@@ -20,7 +20,7 @@ form{
 }
 
 form button:hover{
-    background-color: $--color-gold !important;
+    background-color: $--Primario !important;
     color: black !important;
     font-size: 1.3em;
     border: 2px solid black !important;
@@ -44,7 +44,7 @@ form button:hover{
     align-items: center;
 }
 #formulario-2 p{
-    color: $--color-text-p;
+    color: $--Secundario;
     text-align: center;
 }
 .form-sexo .div-2{
@@ -75,7 +75,7 @@ form button:hover{
 }
 .formulario-contacto{
     background-color: $--color-3;
-    border: 2px solid $--color-gold;
+    border: 2px solid $--Secundario;
     border-radius: 3%;
     padding: 1%;
     padding-inline: 4%;

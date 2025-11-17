@@ -1,0 +1,108 @@
+form {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+form button {
+  width: 100%;
+  height: 45px;
+  font-size: 1.2em;
+  background-color: #E4C59E !important;
+  color: black !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #E76F51 !important;
+  color: black !important;
+  font-size: 1.3em;
+  border: 2px solid black !important;
+}
+
+#formulario-2 form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+#formulario-2 form input {
+  width: 100%;
+  height: 30px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+#formulario-2 label {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  align-items: center;
+}
+
+#formulario-2 p {
+  color: #F4A261;
+  text-align: center;
+}
+
+.form-sexo .div-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-sexo .div-2 div {
+  flex: 1;
+}
+
+#formulario-2 {
+  grid-area: formulario;
+  display: flex;
+  place-content: center;
+  width: 100%;
+  height: auto;
+  background-color: #FAF7F2;
+  padding-inline: 5%;
+}
+
+.formulario {
+  grid-area: formulario;
+  place-content: center;
+}
+
+/*formulario*/
+.formulario {
+  grid-area: formulario;
+  background-color: #FAF7F2;
+}
+
+.formulario-contacto {
+  background-color: #FAF7F2;
+  border: 2px solid #F4A261;
+  border-radius: 3%;
+  padding: 1%;
+  padding-inline: 4%;
+}
+
+.form-mensaje textarea {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.form-sexo input {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.form-checkbox input {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.form-rango input {
+  flex: 1;
+  cursor: pointer;
+}/*# sourceMappingURL=formularios.css.map */
