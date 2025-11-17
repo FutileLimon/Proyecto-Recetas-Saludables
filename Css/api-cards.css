@@ -9,12 +9,18 @@
 
 /* === Tarjeta individual === */
 .tarjeta-receta {
-  background: #5CB85C;
+  background: #2E3A3F;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
   transition: 0.3s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.tarjeta-receta h3 {
+  margin-top: 4%;
+  color: white;
+  font-size: 2rem;
 }
 
 .tarjeta-receta:hover {
@@ -38,9 +44,17 @@
 }
 
 .subtitulo {
-  color: #A8E6CF;
+  color: #E4C59E;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #E76F51;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
 .acciones-tarjeta {
@@ -48,18 +62,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .enlace {
-  color: #FFA45B;
+  color: #2A9D8F;
   text-decoration: none;
-  border-bottom: 1px dashed #FFA45B;
+  border-bottom: 1px dashed #2A9D8F;
   font-weight: 600;
 }
 
 .enlace:hover {
-  color: #2E3D34;
+  color: #2A2A28;
 }
 
 /* === Centrar el botón "Ver más recetas" === */
