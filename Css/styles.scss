@@ -7,7 +7,7 @@
 $font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
 
 @mixin grid-main-perso($var: ""){
-    background: $--titulo;
+    background: $--color-1;
     width: 100%;
     height: auto;
     place-content: center;
@@ -258,3 +258,68 @@ p{
     }
 }
 
+/* === Modal === */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.contenido-modal {
+    background: $--Complementario2;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 2rem;
+    color: $--Primario;
+    max-width: 700px;
+    width: 90%;
+    overflow-y: auto;
+    max-height: 90vh;
+    box-shadow: $--Complementario;
+    animation: aparecerModal .3s ease forwards;
+}
+
+.contenido-modal h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px red;
+}
+
+.contenido-modal img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    color: $--Complementario;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cerrar-modal:hover { 
+    color: $--Complementario2; 
+    transform: scale(1.1); 
+}
+
+/* Animación modal */
+@keyframes aparecerModal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.tarjetas-recetas{
+    gap: 20px;
+    padding: 20px;
+}
