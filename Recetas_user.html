@@ -44,50 +44,48 @@
         </div>
     </nav>
     <!--Main grid-->
-    <div class="container-fluid grid-main-inicio">
-
         <!--Formulario-->
-        <div class="row formulario mt-5 no-color row-contacto-1" style="display : flex;">
-            <div class="col-8 formulario-contacto shadow-lg">
-                <form class="container-6" id="form-contacto" method="POST">
-                    <div class="row mb-3 py-2">
-                        <div class="col-sm-12">
-                            <label class="form-label" for="Nombre">Nombre del plato:</label>
-                        </div>
-                        <div class="col-sm-12 d-flex gap-1">
-                            <input class="form-control" type="text" id="input_nombre" name="Nombre" placeholder="ej: Pollo apanado" required>                            
-                        </div>
+    <div class="row formulario mt-5 no-color row-contacto-1" style="display : flex;">
+        <div class="col-8 formulario-contacto shadow-lg">
+            <form class="container-6" id="form-contacto" method="POST">
+                <div class="row mb-3 py-2">
+                    <div class="col-sm-12">
+                        <label class="form-label" for="Nombre">Nombre del plato:</label>
                     </div>
+                    <div class="col-sm-12 d-flex gap-1">
+                        <input class="form-control" type="text" id="input_nombre" name="Nombre" placeholder="ej: Pollo apanado" required>                            
+                    </div>
+                </div>
 
-                    <div class="row py-2">
-                        <div class="col-md-12">
-                            <label class="form-label" for="Email">Email:  </label>
-                            <input class="form-control" type="text" id="Email" name="Email" placeholder="ejemplo@gmail.com">
-                        </div>
+                <div class="row py-2">
+                    <div class="col-md-12">
+                        <label class="form-label" for="Email">Email:  </label>
+                        <input class="form-control" type="text" id="Email" name="Email" placeholder="ejemplo@gmail.com">
                     </div>
+                </div>
 
-                    <div class="row py-2">
-                        <div class="col">
-                            <label class="form-label" for="asunto">Asunto:</label>
-                        </div>
-                        <div class="col">
-                            <select class="form-select" name="asunto" id="asunto">
-                                <option value="carnivoro">Carnivoro</option>
-                                <option value="vegano">Vegano</option>
-                                <option value="vegetariano">Vegetariano</option>
-                                <option value="ovolactovegetariano">Ovolactovegetariano</option>
-                            </select>
-                        </div>
+                <div class="row py-2">
+                    <div class="col">
+                        <label class="form-label" for="asunto">Asunto:</label>
                     </div>
+                    <div class="col">
+                        <select class="form-select" name="asunto" id="asunto">
+                            <option value="carnivoro">Carnivoro</option>
+                            <option value="vegano">Vegano</option>
+                            <option value="vegetariano">Vegetariano</option>
+                            <option value="ovolactovegetariano">Ovolactovegetariano</option>
+                        </select>
+                    </div>
+                </div>
 
-                    <div class="row py-2">
-                        <div class="col"><label class="form-label" for="mensaje">Receta Detallada:</label></div>
-                        <div class="col"><textarea class="form-control" name="mensaje" id="mensaje" rows="6" cols="40" placeholder="inserte texto"></textarea></div>
-                    </div>
-                    <button class="btn btn-primary boton-form-contacto" type="submit">Subir Receta</button>
-                </form>
-            </div>
+                <div class="row py-2">
+                    <div class="col"><label class="form-label" for="mensaje">Receta Detallada:</label></div>
+                    <div class="col"><textarea class="form-control" name="mensaje" id="mensaje" rows="6" cols="40" placeholder="inserte texto"></textarea></div>
+                </div>
+                <button class="btn btn-primary boton-form-contacto" type="submit">Subir Receta</button>
+            </form>
         </div>
+    </div>
 
         <div class="row">
             <div class="col-12 tarjetas-recetas">
