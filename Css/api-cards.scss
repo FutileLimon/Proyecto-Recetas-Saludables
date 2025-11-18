@@ -7,85 +7,103 @@
     margin-top: 1rem;
 }
 
-/* === Tarjeta individual === */
 .tarjeta-receta {
-    background: $--tarjeta;
+    background: $--color-1;              
+    border: 2px solid $--Complementario2; 
     border-radius: 18px;
-    border: 1px solid rgba(255,255,255,.06);
-    overflow: hidden;
-    transition: .3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+    padding-bottom: 1rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+
+    transition: transform .25s ease, box-shadow .25s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.28);
+    }
 }
 
-.tarjeta-receta h3{ 
-    margin-top: 4%;
-    color:  white; 
-    font-size: 2rem; 
+.seccion {
+    background: $--color-text-p;           // color claro como tus modales
+    padding-top: 3rem;
+    padding-bottom: 1rem;  
+}
+
+.tarjeta-receta .titulo {
+    color: $--Complementario2 !important;   
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 
-.tarjeta-receta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,.45);
+.tarjeta-receta .subtitulo {
+    color: $--color-text-p;
+    font-weight: bold;
 }
 
+/* Botón GUARDAR */
+.tarjeta-receta .btn {
+    background: $--Primario !important;
+    color: #fff !important;
+    border: none;
+    padding: .6rem 1rem;
+    border-radius: 12px;
+    margin-top: .5rem;
+    transition: .25s ease;
 
+    &:hover {
+        background: $--Secundario !important;
+        transform: translateY(-2px);
+    }
+}
+
+/* Botón cuando la receta fue guardada */
+.guardado-exito {
+    background: $--Secundario !important;
+}
+
+/* Enlace “Ver receta” */
+.tarjeta-receta .ver-receta {
+    color: $--Complementario2 !important;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: $--Primario !important;
+    }
+}
+/* Imagen dentro de la tarjeta */
 .imagen-receta {
-    aspect-ratio: 16/10;
+    width: 100%;
+    height: 200px;                        // Puedes subir a 230–260 si quieres más grande
+    border-radius: 18px 18px 0 0;         // Redondea solo arriba para que calce con la tarjeta
     background-size: cover;
     background-position: center;
-    transition: .4s ease;
-}
-
-.imagen-receta:hover { 
-    filter: brightness(1.1) saturate(1.1); 
-}
-
-.cuerpo-receta { 
-    padding: 1rem; 
-}
-
-.subtitulo { 
-    color: $--color-2; 
-    font-size: .8rem; 
-    text-transform: uppercase; 
-}
-
-.btn {
-    display: inline-block;
-    background-color: $--Primario;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
+    background-repeat: no-repeat;
 }
 
 .acciones-tarjeta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-}
-
-.enlace {
-    color: $--Complementario;
-    text-decoration: none;
-    border-bottom: 1px dashed $--Complementario;
-    font-weight: 600;
-}
-
-.enlace:hover { 
-    color: $--Neutro-oscuro; 
-}
-
-/* === Centrar el botón "Ver más recetas" === */
-.contenedor-ver-mas {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
+    padding: 0 .5rem 0 1rem;
 }
 
 #verMas {
-    display: inline-block;
+    display: block !important;
+    background: $--Primario !important;
+    color: #fff !important;
+    border: none;
+    padding: .8rem 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    font-weight: bold;
     text-align: center;
-    margin: 0 auto;
+    cursor: pointer;
+    transition: .25s;
+
+    &:hover {
+        background: $--Secundario !important;
+        transform: translateY(-3px);
+    }
 }

@@ -8,7 +8,7 @@ let recetas = [];
 
 // === Cargar recetas desde la API ===
 async function cargarRecetas() {
-    if (!contenedorTarjetas) return; // por si este JS se carga en otra página
+    if (!contenedorTarjetas) return;
 
     try {
         const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian');
@@ -21,10 +21,8 @@ async function cargarRecetas() {
     }
 }
 
-// Mostrar recetas en tarjetas 
+// === Mostrar recetas ===
 function mostrarRecetas() {
-    if (!contenedorTarjetas) return;
-
     const inicio = pagina * recetasPorPagina;
     const fin = inicio + recetasPorPagina;
     const recetasAMostrar = recetas.slice(inicio, fin);
@@ -33,123 +31,29 @@ function mostrarRecetas() {
         const tarjeta = document.createElement('article');
         tarjeta.classList.add('tarjeta-receta');
         tarjeta.innerHTML = `
-        <div class="imagen-receta" style="background-image:url('${receta.strMealThumb}')"></div>
-        <div class="cuerpo-receta">
-            <span class="subtitulo">Tendencia</span>
-            <h3 class="titulo">${receta.strMeal}</h3>
-        </div>
-        <div class="acciones-tarjeta">
-            <a class="enlace ver-receta" data-id="${receta.idMeal}" href="#">Ver receta</a>
-            <button class="btn btn-guardar" data-id="${receta.idMeal}">Guardar</button>
-        </div>
+            <div class="imagen-receta" style="background-image:url('${receta.strMealThumb}')"></div>
+            <div class="cuerpo-receta">
+                <span class="subtitulo">Tendencia</span>
+                <h3 class="titulo">${receta.strMeal}</h3>
+            </div>
+            <div class="acciones-tarjeta">
+                <a class="enlace ver-receta" data-id="${receta.idMeal}" href="#">Ver receta</a>
+                <button class="btn btn-guardar" data-id="${receta.idMeal}">Guardar</button>
+            </div>
         `;
         contenedorTarjetas.appendChild(tarjeta);
     });
 
     pagina++;
-    if (botonVerMas && pagina * recetasPorPagina >= recetas.length) {
+    if (pagina * recetasPorPagina >= recetas.length) {
         botonVerMas.style.display = 'none';
     }
-
-    activarBotones();
 }
 
-// Mostrar detalle en un modal 
+// === MODAL ÚNICO DE DETALLE ===
 async function mostrarDetalle(id) {
-    if (document.querySelector('.modal')) return;
 
-    try {
-        const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-        const datos = await respuesta.json();
-        const receta = datos.meals[0];
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.innerHTML = `
-        <div class="contenido-modal">
-            <button class="cerrar-modal">×</button>
-            <h2>${receta.strMeal}</h2>
-            <img src="${receta.strMealThumb}" alt="${receta.strMeal}">
-            <h4>Instrucciones</h4>
-            <p>${receta.strInstructions}</p>
-        </div>
-        `;
-        document.body.style.overflow = 'hidden';
-        document.body.appendChild(modal);
-
-        const btnCerrar = modal.querySelector('.cerrar-modal');
-        btnCerrar.addEventListener('click', () => {
-            modal.remove();
-            document.body.style.overflow = 'auto';
-        });
-
-        modal.addEventListener('click', e => { 
-            if (e.target === modal) {
-                modal.remove();
-                document.body.style.overflow = 'auto';
-            }
-        });
-    } catch (error) {
-        console.error('Error al mostrar detalle de receta:', error);
-    }
-}
-
-// Guardar receta para el usuario activo
-function guardarReceta(id, boton) {
-    const usuario = (localStorage.getItem("usuarioActivo") || "").trim();
-
-    if (!usuario) {
-        alert("Debes iniciar sesión para guardar recetas.");
-        return;
-    }
-
-    const clave = "misRecetas_" + usuario;
-    let guardadas = JSON.parse(localStorage.getItem(clave)) || [];
-
-    const receta = recetas.find(r => r.idMeal == id);
-    if (!receta) {
-        console.warn("No encontré la receta en el arreglo original:", id);
-        return;
-    }
-
-    if (guardadas.some(r => r.idMeal == id)) {
-        boton.textContent = "Guardado ✓";
-        return;
-    }
-
-    guardadas.push(receta);
-    localStorage.setItem(clave, JSON.stringify(guardadas));
-
-    boton.textContent = "Guardado ✓";
-    boton.classList.add("guardado-exito");
-    console.log("Recetas guardadas para", usuario, guardadas);
-}
-
-// Activar botones “Guardar” y “Ver receta” 
-function activarBotones() {
-    // Ver receta
-    document.querySelectorAll('.ver-receta').forEach(enlace => {
-        enlace.addEventListener('click', e => {
-            e.preventDefault();
-            const id = enlace.dataset.id;
-            mostrarDetalle(id);
-        });
-    });
-
-    // Guardar receta
-    document.querySelectorAll('.btn-guardar').forEach(boton => {
-        boton.addEventListener('click', () => {
-            const id = boton.dataset.id;
-            guardarReceta(id, boton);
-        });
-    });
-}
-
-// Cargar más recetas 
-if (botonVerMas) {
-    botonVerMas.addEventListener('click', mostrarRecetas);
-}
-
-async function mostrarDetalle(id) {
+    // Evitar abrir doble modal
     if (document.querySelector('.modal-personalizado.activo')) return;
 
     try {
@@ -157,7 +61,6 @@ async function mostrarDetalle(id) {
         const datos = await respuesta.json();
         const receta = datos.meals[0];
 
-        // Crear modal reutilizando estilo existente
         const modal = document.createElement("div");
         modal.className = "modal-personalizado activo";
 
@@ -185,7 +88,6 @@ async function mostrarDetalle(id) {
         document.body.appendChild(modal);
         document.body.style.overflow = "hidden";
 
-        // Cerrar modal
         modal.addEventListener("click", e => {
             if (e.target.classList.contains("cerrarReceta") || e.target === modal) {
                 modal.remove();
@@ -198,7 +100,51 @@ async function mostrarDetalle(id) {
     }
 }
 
+// === GUARDAR RECETA ===
+function guardarReceta(id, boton) {
+    const usuario = (localStorage.getItem("usuarioActivo") || "").trim();
 
+    if (!usuario) {
+        alert("Debes iniciar sesión para guardar recetas.");
+        return;
+    }
 
-// Inicializar página 
+    const clave = "misRecetas_" + usuario;
+    let guardadas = JSON.parse(localStorage.getItem(clave)) || [];
+
+    const receta = recetas.find(r => r.idMeal == id);
+
+    if (guardadas.some(r => r.idMeal == id)) {
+        boton.textContent = "Guardado ✓";
+        return;
+    }
+
+    guardadas.push(receta);
+    localStorage.setItem(clave, JSON.stringify(guardadas));
+
+    boton.textContent = "Guardado ✓";
+    boton.classList.add("guardado-exito");
+}
+
+// === EVENT DELEGATION GLOBAL ===
+document.addEventListener("click", (e) => {
+
+    // VER RECETA
+    if (e.target.classList.contains("ver-receta")) {
+        e.preventDefault();
+        mostrarDetalle(e.target.dataset.id);
+    }
+
+    // GUARDAR
+    if (e.target.classList.contains("btn-guardar")) {
+        guardarReceta(e.target.dataset.id, e.target);
+    }
+});
+
+// === Cargar más recetas ===
+if (botonVerMas) {
+    botonVerMas.addEventListener('click', mostrarRecetas);
+}
+
+// === Inicializar ===
 cargarRecetas();
