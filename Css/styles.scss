@@ -235,7 +235,7 @@ p{
 
 //pagina nosotros
 .nosotros{
-    margin-top: 115px;
+    margin-top: 50px;
     display: grid;
     padding-inline: 3%;
     gap: 3%;
@@ -246,6 +246,7 @@ p{
     background-color: $--Neutro-medio;
     padding-top: 2%;
     padding-bottom: 2%;
+    padding-inline: 5%;
     h2 {
         font-size: 4rem;
     }

@@ -688,7 +688,7 @@ p {
 }
 
 .nosotros {
-  margin-top: 115px;
+  margin-top: 50px;
   display: grid;
   padding-inline: 3%;
   gap: 3%;
@@ -700,6 +700,7 @@ p {
   background-color: #E0DED8;
   padding-top: 2%;
   padding-bottom: 2%;
+  padding-inline: 5%;
 }
 .di-part h2 {
   font-size: 4rem;
