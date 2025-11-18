@@ -3,7 +3,7 @@
 .nav-ini{
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 99999 !important;
     line-height: 50px;
     backdrop-filter: blur(15px);
     border: 0;

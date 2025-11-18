@@ -3,7 +3,7 @@
 .nav-ini {
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 99999 !important;
   line-height: 50px;
   backdrop-filter: blur(15px);
   border: 0;
@@ -493,9 +493,9 @@ p {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .titulo {
@@ -628,11 +628,6 @@ p {
   z-index: 1000;
 }
 
-.bloque-imagen-1 .bloque-imagen-2 .bloque-imagen-3 {
-  position: relative;
-  overflow: hidden;
-}
-
 .bloque-imagen-1 img {
   width: 100%;
   height: 600px;
@@ -652,6 +647,13 @@ p {
   height: 600px;
   display: block;
   object-fit: cover;
+}
+
+.bloque-imagen-1,
+.bloque-imagen-2,
+.bloque-imagen-3 {
+  position: relative;
+  z-index: 1;
 }
 
 .texto-sobre-img {
@@ -697,15 +699,19 @@ p {
   border-radius: 24px;
 }
 
-/* === Modal === */
-.modal {
+/* === Modal PERSONALIZADO === */
+.modal-personalizado {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 2000;
+}
+
+.modal-personalizado.activo {
+  display: flex;
 }
 
 .contenido-modal {

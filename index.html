@@ -41,137 +41,127 @@
             </div>
         </div>
     </nav>
-
-
     <!-- MODAL LOGIN -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-dark">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Iniciar sesión</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <div class="modal-personalizado" id="modalLoginPersonal">
+        <div class="contenido-modal">
+            <!-- Botón cerrar -->
+            <button class="cerrar-modal" id="cerrarLogin">&times;</button>
+            <!-- Título -->
+            <h2>Iniciar sesión</h2>
+            <!-- Formulario -->
+            <form id="formLogin">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="loginCorreo" required>
                 </div>
-                <div class="modal-body">
-                    <form id="formLogin">
-                        <div class="mb-3">
-                            <label class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="loginCorreo" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="loginPass" required>
-                        </div>
-                        <button type="submit" class="btn boton-principal w-100">Entrar</button>
-                    </form>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="loginPass" required>
                 </div>
-            </div>
+                <button type="submit" class="btn boton-principal w-100">Entrar</button>
+            </form>
         </div>
     </div>
-
     <!-- MODAL REGISTRO -->
-    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-dark">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Crear cuenta</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <div class="modal-personalizado" id="modalRegistroPersonal">
+        <div class="contenido-modal">
+            <!-- Botón cerrar -->
+            <button class="cerrar-modal" id="cerrarRegistro">&times;</button>
+            <!-- Título -->
+            <h2>Crear cuenta</h2>
+            <!-- Formulario -->
+            <form id="formRegistro">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="regCorreo" required>
                 </div>
-                <div class="modal-body">
-                    <form id="formRegistro">
-                        <div class="mb-3">
-                            <label class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="regCorreo" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="regPass" required>
-                        </div>
-                        <button type="submit" class="btn boton-principal w-100">Registrarse</button>
-                    </form>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="regPass" required>
+                </div>
+                <button type="submit" class="btn boton-principal w-100">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Main grid-->
+    <div class="row fondo-w">
+        <div class="col-12">
+            <div class="container-interactivo" style="margin-top: 0px;">
+                <div class="div-titulo"><h1>Alimentacion saludable</h1>
+                    <div class="container-fotos">
+                        <img id="enlace_parrafo_2" src="https://www.lafallera.es/wp-content/uploads/2025/02/comida-sana.jpg" alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_3" src="https://wallpapers.com/images/featured/fondos-de-comida-saludable-koa3dorcij10rsp2.jpg"      alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_4" src="https://hips.hearstapps.com/hmg-prod/images/poke-bowl-recetas-frias-elle-1655891789.png?resize=980:*"               alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_5" src="https://img.freepik.com/foto-gratis/ensalada-tomate-verde-vista-superior-placa-ovalada-cuaderno-sobre-fondo-gris_140725-138312.jpg?semt=ais_hybrid&w=740&q=80"             alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_6" src="https://www.clara.es/medio/2023/01/05/recetas-saludables_9b663db8_1280x1029.jpg"    alt="" title="haga doble click para ir a la pagina oficial">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--Main grid-->
-    <div class="container-fluid grid-main-inicio">
-        <div class="row fondo-w">
-            <div class="col-12">
-                <div class="container-interactivo" style="margin-top: 0px;">
-                    <div class="div-titulo"><h1>Alimentacion saludable</h1>
-                        <div class="container-fotos">
-                            <img id="enlace_parrafo_2" src="https://www.lafallera.es/wp-content/uploads/2025/02/comida-sana.jpg" alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_3" src="https://wallpapers.com/images/featured/fondos-de-comida-saludable-koa3dorcij10rsp2.jpg"      alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_4" src="https://hips.hearstapps.com/hmg-prod/images/poke-bowl-recetas-frias-elle-1655891789.png?resize=980:*"               alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_5" src="https://img.freepik.com/foto-gratis/ensalada-tomate-verde-vista-superior-placa-ovalada-cuaderno-sobre-fondo-gris_140725-138312.jpg?semt=ais_hybrid&w=740&q=80"             alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_6" src="https://www.clara.es/medio/2023/01/05/recetas-saludables_9b663db8_1280x1029.jpg"    alt="" title="haga doble click para ir a la pagina oficial">
+    <div class="row">
+        <div class="col-12 titulo-section">
+            <h2>Come bien, siente mejor</h2>
+        </div>
+    </div>
+    <div class="row descuadrada-ini-1 section-ini fondo-w">
+        <div class="col-12 position-relative bloque-imagen-1">
+            <img class="shadow-lg img-fluid" src="https://images.unsplash.com/photo-1690983322857-0811d47fedfc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9uZG8lMjBkZWwlMjBtZW4lQzMlQkF8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" alt="">
+            <div class="texto-sobre-img">
+                <p>Alimentarte no tiene que ser complicado ni aburrido. Aquí encontrarás recetas que equilibran sabor, nutrición y practicidad, para que cada comida te acerque a una versión más saludable y feliz de ti mismo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 titulo-section">
+            <h2>Cocina saludable, mente tranquila</h2>
+        </div>
+    </div>
+
+    <div class="row descuadrada-ini-1 section-ini fondo-w">
+        <div class="col-12 position-relative bloque-imagen-2">
+            <img class="shadow-lg img-fluid" src="Img/sarten.png" alt="">
+            <div class="texto-sobre-img">
+                <p>Cuidarte también es regalarte un momento de calma. Cocinar puede ser tu espacio de desconexión, una forma de quererte más y de compartir bienestar con quienes te rodean.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 titulo-section">
+            <h2>Empieza hoy, a tu ritmo</h2>
+        </div>
+    </div>
+
+    <div class="row descuadrada-ini-1 section-ini fondo-w">
+        <div class="col-12 position-relative bloque-imagen-3">
+            <img class="shadow-lg img-fluid" src="Img/ensalda.png" alt="">
+            <div class="texto-sobre-img">
+                <p>No necesitas cambiarlo todo de golpe. Empieza con una receta, un sabor nuevo o una mejor elección. Lo importante es dar el primer paso hacia una versión más sana, más feliz y más tú.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">   
+            <!-- TARJETAS DE RECETAS DINÁMICAS -->
+            <section class="seccion">
+                <div class="contenedor">
+                    <header class="encabezado-tarjetas">
+                        <br><div class="acciones-tarjeta">
+                                <button class="btn">Filtrar</button>
+                                <button class="btn">Ordenar</button>
                         </div>
+                    </header>
+                    <div class="tarjetas"></div>
+                    <!-- Botón Ver Más -->
+                    <div class="contenedor-ver-mas">
+                        <button id="verMas" class="btn primario">Ver más recetas</button>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 titulo-section">
-                <h2>Come bien, siente mejor</h2>
-            </div>
-        </div>
-        <div class="row descuadrada-ini-1 section-ini fondo-w">
-            <div class="col-12 position-relative bloque-imagen-1">
-                <img class="shadow-lg img-fluid" src="https://images.unsplash.com/photo-1690983322857-0811d47fedfc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9uZG8lMjBkZWwlMjBtZW4lQzMlQkF8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" alt="">
-                <div class="texto-sobre-img">
-                    <p>Alimentarte no tiene que ser complicado ni aburrido. Aquí encontrarás recetas que equilibran sabor, nutrición y practicidad, para que cada comida te acerque a una versión más saludable y feliz de ti mismo.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 titulo-section">
-                <h2>Cocina saludable, mente tranquila</h2>
-            </div>
-        </div>
-
-        <div class="row descuadrada-ini-1 section-ini fondo-w">
-            <div class="col-12 position-relative bloque-imagen-2">
-                <img class="shadow-lg img-fluid" src="Img/sarten.png" alt="">
-                <div class="texto-sobre-img">
-                    <p>Cuidarte también es regalarte un momento de calma. Cocinar puede ser tu espacio de desconexión, una forma de quererte más y de compartir bienestar con quienes te rodean.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 titulo-section">
-                <h2>Empieza hoy, a tu ritmo</h2>
-            </div>
-        </div>
-
-        <div class="row descuadrada-ini-1 section-ini fondo-w">
-            <div class="col-12 position-relative bloque-imagen-3">
-                <img class="shadow-lg img-fluid" src="Img/ensalda.png" alt="">
-                <div class="texto-sobre-img">
-                    <p>No necesitas cambiarlo todo de golpe. Empieza con una receta, un sabor nuevo o una mejor elección. Lo importante es dar el primer paso hacia una versión más sana, más feliz y más tú.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">   
-                <!-- TARJETAS DE RECETAS DINÁMICAS -->
-                <section class="seccion">
-                    <div class="contenedor">
-                        <header class="encabezado-tarjetas">
-                            <br><div class="acciones-tarjeta">
-                                    <button class="btn">Filtrar</button>
-                                    <button class="btn">Ordenar</button>
-                            </div>
-                        </header>
-                        <div class="tarjetas"></div>
-                        <!-- Botón Ver Más -->
-                        <div class="contenedor-ver-mas">
-                            <button id="verMas" class="btn primario">Ver más recetas</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            </section>
         </div>
     </div>
     <div class="container-fluid">
@@ -180,21 +170,23 @@
             <div class="col">
                 <footer class="footer">
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2 nav-link"><a href="https://github.com/FutileLimon">FutileLimon</a></li>
-                        <li class="nav-item mb-2 nav-link"><a href="+569 31142218">+56 9 3114 2218</a></li>
+                        <li class="nav-item mb-2"><a href="https://github.com/FutileLimon" class="nav-link">FutileLimon</a></li>
+                        <li class="nav-item mb-2"><a href="+569 31142218"  class="nav-link">+56 9 3114 2218</a></li>
                     </ul>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2 nav-link"><a href="https://github.com/Matias281205">Matias281205</a></li>
-                        <li class="nav-item mb-2 nav-link"><a href="tel:+56 9 64 11 78 61">+56 9 6411 7861</a></li>
+                        <li class="nav-item mb-2"><a href="https://github.com/Matias281205"  class="nav-link">Matias281205</a></li>
+                        <li class="nav-item mb-2"><a href="tel:+56 9 64 11 78 61"  class="nav-link">+56 9 6411 7861</a></li>
                     </ul>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2 nav-link"><i class="fa-brands fa-github"></i></li>
-                        <li class="nav-item mb-2 nav-link"><i class="fa-brands fa-whatsapp"></i></li>
+                        <li class="nav-item mb-2"><i class="fa-brands fa-github"  class="nav-link"></i></li>
+                        <li class="nav-item mb-2"><i class="fa-brands fa-whatsapp"  class="nav-link"></i></li>
                     </ul>
                 </footer>
             </div>
         </div>
-        <div class="py-3 my-3 border-top" id="footer-2-ini"><p>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025</p></div>
+        <div class="py-3 my-3 border-top" id="footer-2-ini">
+            <p>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025</p>
+        </div>
     </div>
 
     <div class="Top" id="toTop">
@@ -206,5 +198,6 @@
     <script src="Js/navbar.js"></script>
     <script src="Js/slides.js"></script>
     <script src="Js/top-button.js"></script>
+    <script src="Js/login.js"></script>
 </body>
 </html>
