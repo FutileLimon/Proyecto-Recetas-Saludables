@@ -407,3 +407,78 @@
     background: $--Complementario;
     border-radius: 10px;
 }
+
+/* -------------------------CONTACTO (nose como hacer otro sass y no quiero arruinar el codigo-------------------------- */
+
+.contacto-section {
+    min-height: 100vh;
+    background: $--Neutro-claro;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-container {
+    background: $--color-1;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 750px;
+    border-radius: 20px;
+    border: 2px solid $--Complementario2;
+}
+
+.titulo-contacto h1 {
+    font-size: 2.8rem;
+    color: $--Complementario2;
+    text-align: center;
+}
+
+.titulo-contacto p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: $--color-text-p;
+    margin-bottom: 2rem;
+}
+
+.contacto-form .grupo-input {
+    margin-bottom: 1.3rem;
+}
+
+.label {
+    font-weight: bold;
+    color: $--Complementario2;
+    margin-bottom: .3rem;
+}
+
+.input-contacto,
+.select-contacto select,
+.textarea-contacto {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 10px;
+    border: 1px solid $--Neutro-medio;
+    background: $--Neutro-claro;
+    color: $--color-text-p;
+
+    &:focus {
+        border-color: $--Complementario;
+        box-shadow: 0 0 10px rgba(42,157,143,.3);
+    }
+}
+
+.btn-enviar-contacto {
+    background: $--Primario;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .25s;
+    margin-top: 1rem;
+}
+
+.btn-enviar-contacto:hover {
+    background: $--Secundario;
+    transform: translateY(-1px);
+}

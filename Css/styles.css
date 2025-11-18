@@ -844,4 +844,79 @@ p {
   border-radius: 10px;
 }
 
+/* -------------------------CONTACTO (nose como hacer otro sass y no quiero arruinar el codigo-------------------------- */
+.contacto-section {
+  min-height: 100vh;
+  background: #FFFBF7;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contacto-container {
+  background: #F9F5EF;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 750px;
+  border-radius: 20px;
+  border: 2px solid #264653;
+}
+
+.titulo-contacto h1 {
+  font-size: 2.8rem;
+  color: #264653;
+  text-align: center;
+}
+
+.titulo-contacto p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4C4B46;
+  margin-bottom: 2rem;
+}
+
+.contacto-form .grupo-input {
+  margin-bottom: 1.3rem;
+}
+
+.label {
+  font-weight: bold;
+  color: #264653;
+  margin-bottom: 0.3rem;
+}
+
+.input-contacto,
+.select-contacto select,
+.textarea-contacto {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #E0DED8;
+  background: #FFFBF7;
+  color: #4C4B46;
+}
+.input-contacto:focus,
+.select-contacto select:focus,
+.textarea-contacto:focus {
+  border-color: #2A9D8F;
+  box-shadow: 0 0 10px rgba(42, 157, 143, 0.3);
+}
+
+.btn-enviar-contacto {
+  background: #E76F51;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+  margin-top: 1rem;
+}
+
+.btn-enviar-contacto:hover {
+  background: #F4A261;
+  transform: translateY(-1px);
+}
+
 /*# sourceMappingURL=styles.css.map */
