@@ -94,24 +94,44 @@ async function mostrarDetalle(id) {
 
 // === Activar botones “Guardar” y “Ver receta” ===
 function activarBotones() {
-    // Ver receta
-    document.querySelectorAll('.ver-receta').forEach(enlace => {
-        enlace.addEventListener('click', e => {
-        e.preventDefault();
-        mostrarDetalle(enlace.dataset.id);
-        });
-    });
-
     // Guardar receta
     document.querySelectorAll('.tarjeta-receta .btn').forEach(boton => {
         boton.addEventListener('click', () => {
-        const guardado = boton.dataset.guardado === '1';
-        boton.dataset.guardado = guardado ? '0' : '1';
-        boton.textContent = guardado ? 'Guardar' : 'Guardado ✓';
-        boton.classList.toggle('primario', !guardado);
+            const id = boton.closest(".tarjeta-receta")
+                            .querySelector(".ver-receta")
+                            .dataset.id;
+
+            guardarReceta(id, boton);
         });
     });
 }
+
+function guardarReceta(id, boton) {
+    // Obtener correo del usuario
+    const usuario = localStorage.getItem("usuarioActivo");
+    if (!usuario) {
+        alert("Debes iniciar sesión para guardar recetas.");
+        return;
+    }
+    // Nombre único del repositorio del usuario
+    const clave = "misRecetas_" + usuario;
+    // Cargar recetas del usuario
+    let guardadas = JSON.parse(localStorage.getItem(clave)) || [];
+    // Buscar receta en el array original
+    const receta = recetas.find(r => r.idMeal == id);
+    // Evitar duplicados
+    if (guardadas.some(r => r.idMeal == id)) {
+        boton.textContent = "Guardado ✓";
+        return;
+    }
+    // Guardar receta nueva
+    guardadas.push(receta);
+    localStorage.setItem(clave, JSON.stringify(guardadas));
+    boton.textContent = "Guardado ✓";
+    boton.classList.add("guardado-exito");
+}
+
+
 
 
 // === Cargar más recetas ===

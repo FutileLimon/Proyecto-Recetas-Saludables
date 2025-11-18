@@ -42,10 +42,12 @@ document.getElementById("formRegistro").addEventListener("submit", function(e) {
 
     const correo = document.getElementById("regCorreo").value;
     const pass = document.getElementById("regPass").value;
-
+    
     // Guardar datos en localStorage
     localStorage.setItem("usuarioCorreo", correo);
     localStorage.setItem("usuarioPass", pass);
+    localStorage.setItem("usuarioActivo", loginCorreo.value);
+    
 
     alert("¡Cuenta creada con éxito!");
 
@@ -76,9 +78,12 @@ document.getElementById("formLogin").addEventListener("submit", function(e) {
         // Mostrar cerrar sesión
         document.getElementById("btnCerrarSesion").classList.remove("oculto");
         document.getElementById("divisorUsuario").classList.remove("oculto");
-
+        
         // Cerrar modal login
         document.getElementById("modalLoginPersonal").classList.remove("activo");
+
+        // Mostrar boton mis recetas
+        document.getElementById("btnMisRecetas").classList.remove("oculto");
     } else {
         alert("Correo o contraseña incorrectos");
     }
@@ -95,13 +100,16 @@ window.addEventListener("load", () => {
 
         document.getElementById("btnCerrarSesion").classList.remove("oculto");
         document.getElementById("divisorUsuario").classList.remove("oculto");
+        
+        document.getElementById("btnMisRecetas").classList.remove("oculto");
     }
 });
 document.getElementById("btnCerrarSesion").addEventListener("click", () => {
     localStorage.removeItem("usuarioCorreo");
     localStorage.removeItem("usuarioPass");
+    localStorage.removeItem("usuarioActivo");
 
-    location.reload();  // Reinicia para restaurar navbar
+    location.reload();
 });
 
 
