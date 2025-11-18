@@ -8,6 +8,8 @@ let recetas = [];
 
 // === Cargar recetas desde la API ===
 async function cargarRecetas() {
+    if (!contenedorTarjetas) return; // por si este JS se carga en otra página
+
     try {
         const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian');
         const datos = await respuesta.json();
@@ -19,8 +21,10 @@ async function cargarRecetas() {
     }
 }
 
-// === Mostrar recetas en tarjetas ===
+// Mostrar recetas en tarjetas 
 function mostrarRecetas() {
+    if (!contenedorTarjetas) return;
+
     const inicio = pagina * recetasPorPagina;
     const fin = inicio + recetasPorPagina;
     const recetasAMostrar = recetas.slice(inicio, fin);
@@ -36,24 +40,22 @@ function mostrarRecetas() {
         </div>
         <div class="acciones-tarjeta">
             <a class="enlace ver-receta" data-id="${receta.idMeal}" href="#">Ver receta</a>
-            <button class="btn">Guardar</button>
+            <button class="btn btn-guardar" data-id="${receta.idMeal}">Guardar</button>
         </div>
         `;
         contenedorTarjetas.appendChild(tarjeta);
     });
 
     pagina++;
-    if (pagina * recetasPorPagina >= recetas.length) {
+    if (botonVerMas && pagina * recetasPorPagina >= recetas.length) {
         botonVerMas.style.display = 'none';
     }
 
     activarBotones();
 }
 
-
-// === Mostrar detalle en un modal ===
+// Mostrar detalle en un modal 
 async function mostrarDetalle(id) {
-    // Evita abrir más de un modal
     if (document.querySelector('.modal')) return;
 
     try {
@@ -74,91 +76,78 @@ async function mostrarDetalle(id) {
         document.body.style.overflow = 'hidden';
         document.body.appendChild(modal);
 
-        // Cierre del modal
-        document.querySelector('.cerrar-modal').addEventListener('click', () => modal.remove());
+        const btnCerrar = modal.querySelector('.cerrar-modal');
+        btnCerrar.addEventListener('click', () => {
+            modal.remove();
+            document.body.style.overflow = 'auto';
+        });
+
         modal.addEventListener('click', e => { 
             if (e.target === modal) {
                 modal.remove();
                 document.body.style.overflow = 'auto';
             }
-            });
-            document.querySelector('.cerrar-modal').addEventListener('click', () => {
-            modal.remove();
-            document.body.style.overflow = 'auto';
         });
     } catch (error) {
         console.error('Error al mostrar detalle de receta:', error);
     }
+}
+
+// Guardar receta para el usuario activo
+function guardarReceta(id, boton) {
+    const usuario = (localStorage.getItem("usuarioActivo") || "").trim();
+
+    if (!usuario) {
+        alert("Debes iniciar sesión para guardar recetas.");
+        return;
     }
 
+    const clave = "misRecetas_" + usuario;
+    let guardadas = JSON.parse(localStorage.getItem(clave)) || [];
 
-// === Activar botones “Guardar” y “Ver receta” ===
+    const receta = recetas.find(r => r.idMeal == id);
+    if (!receta) {
+        console.warn("No encontré la receta en el arreglo original:", id);
+        return;
+    }
+
+    if (guardadas.some(r => r.idMeal == id)) {
+        boton.textContent = "Guardado ✓";
+        return;
+    }
+
+    guardadas.push(receta);
+    localStorage.setItem(clave, JSON.stringify(guardadas));
+
+    boton.textContent = "Guardado ✓";
+    boton.classList.add("guardado-exito");
+    console.log("Recetas guardadas para", usuario, guardadas);
+}
+
+// Activar botones “Guardar” y “Ver receta” 
 function activarBotones() {
-    // Guardar receta
-    document.querySelectorAll('.tarjeta-receta .btn').forEach(boton => {
-        boton.addEventListener('click', () => {
-            const id = boton.closest(".tarjeta-receta")
-                            .querySelector(".ver-receta")
-                            .dataset.id;
+    // Ver receta
+    document.querySelectorAll('.ver-receta').forEach(enlace => {
+        enlace.addEventListener('click', e => {
+            e.preventDefault();
+            const id = enlace.dataset.id;
+            mostrarDetalle(id);
+        });
+    });
 
+    // Guardar receta
+    document.querySelectorAll('.btn-guardar').forEach(boton => {
+        boton.addEventListener('click', () => {
+            const id = boton.dataset.id;
             guardarReceta(id, boton);
         });
     });
 }
 
-function guardarReceta(id, boton) {
-    // Obtener correo del usuario
-    const usuario = localStorage.getItem("usuarioActivo");
-    if (!usuario) {
-        alert("Debes iniciar sesión para guardar recetas.");
-        return;
-    }
-    // Nombre único del repositorio del usuario
-    const clave = "misRecetas_" + usuario;
-    // Cargar recetas del usuario
-    let guardadas = JSON.parse(localStorage.getItem(clave)) || [];
-    // Buscar receta en el array original
-    const receta = recetas.find(r => r.idMeal == id);
-    // Evitar duplicados
-    if (guardadas.some(r => r.idMeal == id)) {
-        boton.textContent = "Guardado ✓";
-        return;
-    }
-    // Guardar receta nueva
-    guardadas.push(receta);
-    localStorage.setItem(clave, JSON.stringify(guardadas));
-    boton.textContent = "Guardado ✓";
-    boton.classList.add("guardado-exito");
+// Cargar más recetas 
+if (botonVerMas) {
+    botonVerMas.addEventListener('click', mostrarRecetas);
 }
 
-
-
-
-// === Cargar más recetas ===
-botonVerMas.addEventListener('click', mostrarRecetas);
-
-// === Inicializar página ===
+// Inicializar página 
 cargarRecetas();
-
-// === GESTIÓN DE SESIÓN ===
-// refs del menú
-const menuUsuario = document.getElementById('menuUsuario');
-const opcionLogin = document.getElementById('opcionLogin');
-const opcionRegistro = document.getElementById('opcionRegistro');
-
-// refs del modal de login
-const modalLogin = document.getElementById('modalLogin');
-const cerrarLogin = document.querySelector('.cerrar-login');
-const formLogin = document.getElementById('formLogin');
-
-// helper: abrir/cerrar modal login
-function abrirModalLogin() {
-    if (!modalLogin) return;
-    modalLogin.classList.remove('oculto');
-    document.body.style.overflow = 'hidden';
-}
-function cerrarModalLogin() {
-    if (!modalLogin) return;
-    modalLogin.classList.add('oculto');
-    document.body.style.overflow = 'auto';
-}
