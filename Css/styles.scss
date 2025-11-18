@@ -58,11 +58,12 @@ p{
     font-size: 1.19em;
     color: $--color-text-p;
 }
-img{
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
+
 .titulo{
     font-size: 45px;
     font-weight: 500;
