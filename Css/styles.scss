@@ -187,23 +187,16 @@ p{
     z-index: 1000;
 }
 
-.bloque-imagen-1 img {
-    width: 100%;
-    height: 600px; //altura imagen
-    display: block;
-    object-fit: cover;
-}
-
 .bloque-imagen-2 img {
     width: 100%;
-    height: 600px; //altura imagen
+    height: 700px; //altura imagen
     display: block;
     object-fit: cover;
 }
 
 .bloque-imagen-3 img {
     width: 100%;
-    height: 600px; //altura imagen
+    height: 700px; //altura imagen
     display: block;
     object-fit: cover;
 }
@@ -228,6 +221,8 @@ p{
 .texto-sobre-img p {
     color: $--color-2;
     font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: 600;
     margin: 0;
 }

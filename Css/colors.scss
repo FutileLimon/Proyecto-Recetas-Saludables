@@ -17,7 +17,7 @@ $--Fondo-nav : #1F2933;         // Gris azulado profundo, elegante y versátil
 // parte 2
 $--tarjeta: #2E3A3F;            // Fondo de tarjetas o navbar oscuro con contraste
 $--titulo : #101010;            // Títulos potentes en negro suave
-$--fondo-gradiente1 : linear-gradient(180deg, #1F2933, $--Complementario2, $--titulo);
-$--fondo-gradiente2 : linear-gradient(180deg, #1F2933, $--Complementario2, $--titulo);
-$--fondo-gradiente3 : linear-gradient(180deg, #000000, $--Complementario2, $--titulo);
+$--fondo-gradiente1 : linear-gradient(180deg, #1F2933, $--Fondo-nav, $--titulo);
+$--fondo-gradiente2 : linear-gradient(180deg, #1F2933, $--Fondo-nav, $--titulo);
+$--fondo-gradiente3 : linear-gradient(180deg, #000000, $--Fondo-nav, $--titulo);
 
