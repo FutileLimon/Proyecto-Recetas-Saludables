@@ -701,17 +701,21 @@ p {
 
 /* === Modal PERSONALIZADO === */
 .modal-personalizado {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  display: none;
   justify-content: center;
   align-items: center;
   z-index: 2000;
 }
 
 .modal-personalizado.activo {
-  display: flex;
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 .contenido-modal {

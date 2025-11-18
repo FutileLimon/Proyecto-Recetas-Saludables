@@ -27,8 +27,8 @@
                 <span>Gran Pollazo Vegano xDD</span>
             </div>
             <!-- BOTÓN USUARIO -->
-            <div class="menu-usuario dropdown">
-                <button class="boton-usuario" id="dropdownUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="menu-usuario dropdown" data-bs-auto-close="false">
+                <button class="boton-usuario" id="dropdownUsuario" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-user"></i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" id="menuUsuario">
@@ -41,48 +41,6 @@
             </div>
         </div>
     </nav>
-    <!-- MODAL LOGIN -->
-    <div class="modal-personalizado" id="modalLoginPersonal">
-        <div class="contenido-modal">
-            <!-- Botón cerrar -->
-            <button class="cerrar-modal" id="cerrarLogin">&times;</button>
-            <!-- Título -->
-            <h2>Iniciar sesión</h2>
-            <!-- Formulario -->
-            <form id="formLogin">
-                <div class="mb-3">
-                    <label class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="loginCorreo" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="loginPass" required>
-                </div>
-                <button type="submit" class="btn boton-principal w-100">Entrar</button>
-            </form>
-        </div>
-    </div>
-    <!-- MODAL REGISTRO -->
-    <div class="modal-personalizado" id="modalRegistroPersonal">
-        <div class="contenido-modal">
-            <!-- Botón cerrar -->
-            <button class="cerrar-modal" id="cerrarRegistro">&times;</button>
-            <!-- Título -->
-            <h2>Crear cuenta</h2>
-            <!-- Formulario -->
-            <form id="formRegistro">
-                <div class="mb-3">
-                    <label class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="regCorreo" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="regPass" required>
-                </div>
-                <button type="submit" class="btn boton-principal w-100">Registrarse</button>
-            </form>
-        </div>
-    </div>
 
     <!--Main grid-->
     <div class="row fondo-w">
@@ -191,6 +149,50 @@
 
     <div class="Top" id="toTop">
         <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+
+    <!-- MODAL LOGIN -->
+    <div class="modal-personalizado" id="modalLoginPersonal">
+        <div class="contenido-modal">
+            <!-- Botón cerrar -->
+            <button class="cerrar-modal" id="cerrarLogin">&times;</button>
+            <!-- Título -->
+            <h2>Iniciar sesión</h2>
+            <!-- Formulario -->
+            <form id="formLogin">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="loginCorreo" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="loginPass" required>
+                </div>
+                <button type="submit" class="btn boton-principal w-100">Entrar</button>
+            </form>
+        </div>
+    </div>
+    <!-- MODAL REGISTRO -->
+    <div class="modal-personalizado" id="modalRegistroPersonal">
+        <div class="contenido-modal">
+            <!-- Botón cerrar -->
+            <button class="cerrar-modal" id="cerrarRegistro">&times;</button>
+            <!-- Título -->
+            <h2>Crear cuenta</h2>
+            <!-- Formulario -->
+            <form id="formRegistro">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="regCorreo" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="regPass" required>
+                </div>
+                <button type="submit" class="btn boton-principal w-100">Registrarse</button>
+            </form>
+        </div>
     </div>
 
     <script src="Js/api-tarjetas.js" ></script>
