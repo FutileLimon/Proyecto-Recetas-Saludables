@@ -707,7 +707,7 @@ p {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 3000;
+  z-index: 3000000 !important;
   backdrop-filter: blur(6px);
 }
 
@@ -799,6 +799,49 @@ p {
 .tarjetas-recetas {
   gap: 20px;
   padding: 20px;
+}
+
+/* Ajustes especiales para el modal de recetas */
+.modal-receta {
+  max-width: 700px !important;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Imagen dentro del modal */
+.modal-receta .img-detalle {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Subtítulos del modal */
+.modal-receta h3 {
+  color: #264653;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Lista de ingredientes */
+.lista-ingredientes {
+  padding-left: 20px;
+  color: #4C4B46;
+}
+
+.lista-ingredientes li {
+  margin-bottom: 5px;
+}
+
+/* Scroll bonito */
+.modal-receta::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-receta::-webkit-scrollbar-thumb {
+  background: #2A9D8F;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -149,5 +149,56 @@ if (botonVerMas) {
     botonVerMas.addEventListener('click', mostrarRecetas);
 }
 
+async function mostrarDetalle(id) {
+    if (document.querySelector('.modal-personalizado.activo')) return;
+
+    try {
+        const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const datos = await respuesta.json();
+        const receta = datos.meals[0];
+
+        // Crear modal reutilizando estilo existente
+        const modal = document.createElement("div");
+        modal.className = "modal-personalizado activo";
+
+        modal.innerHTML = `
+            <div class="contenido-modal modal-receta">
+                <button class="cerrar-modal cerrarReceta">&times;</button>
+
+                <h2>${receta.strMeal}</h2>
+
+                <img src="${receta.strMealThumb}" alt="${receta.strMeal}" class="img-detalle">
+
+                <h3>Ingredientes</h3>
+                <ul class="lista-ingredientes">
+                    ${Object.keys(receta)
+                        .filter(k => k.startsWith("strIngredient") && receta[k])
+                        .map(k => `<li>• ${receta[k]}</li>`)
+                        .join("")}
+                </ul>
+
+                <h3>Preparación</h3>
+                <p>${receta.strInstructions}</p>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+        document.body.style.overflow = "hidden";
+
+        // Cerrar modal
+        modal.addEventListener("click", e => {
+            if (e.target.classList.contains("cerrarReceta") || e.target === modal) {
+                modal.remove();
+                document.body.style.overflow = "auto";
+            }
+        });
+
+    } catch (error) {
+        console.error("Error mostrando receta:", error);
+    }
+}
+
+
+
 // Inicializar página 
 cargarRecetas();

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/9a7e657bee.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar nav-ini navbar-expand-lg shadow-lg nav-textos-blancos" id="navbar-r">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6192/6192161.png" alt="Logo">
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="Recetas_user.html">Recetas</a></li>
+            </ul>
+            <div class="center-span"><span>Gran Pollazo Vegano xDD</span></div>
+        </div>
+    </nav>
+
+    <!-- CONTACTO -->
+    <div class="contacto-section">
+        <div class="contacto-container shadow-lg">
+
+            <div class="titulo-contacto">
+                <h1>Contáctanos</h1>
+                <p>
+                    Escríbenos tus dudas, comentarios o sugerencias.  
+                    ¡Estamos felices de ayudarte!
+                </p>
+            </div>
+
+            <div id="contacto-form" class="contacto-form">
+
+                <div class="grupo-input">
+                    <div class="label">Nombre</div>
+                    <input type="text" id="c_nombre" class="input-contacto" placeholder="Tu nombre">
+                </div>
+
+                <div class="grupo-input">
+                    <div class="label">Correo electrónico</div>
+                    <input type="email" id="c_email" class="input-contacto" placeholder="ejemplo@gmail.com">
+                </div>
+
+                <div class="grupo-input">
+                    <div class="label">Asunto</div>
+                    <div class="select-contacto">
+                        <select id="c_asunto">
+                            <option value="consulta">Consulta</option>
+                            <option value="receta">Enviar receta</option>
+                            <option value="sugerencia">Sugerencia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <div class="label">Mensaje</div>
+                    <textarea id="c_mensaje" class="input-contacto textarea-contacto" rows="6"
+                        placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+
+                <div class="btn-enviar-contacto" id="btnEnviarContacto">Enviar Mensaje</div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btnEnviarContacto").addEventListener("click", () => {
+            alert("¡Gracias por tu mensaje! Te responderemos pronto.");
+            document.getElementById("c_nombre").value = "";
+            document.getElementById("c_email").value = "";
+            document.getElementById("c_asunto").value = "consulta";
+            document.getElementById("c_mensaje").value = "";
+        });
+    </script>
+
+</body>
+</html>
