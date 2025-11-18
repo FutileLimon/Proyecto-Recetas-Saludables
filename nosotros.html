@@ -11,97 +11,106 @@
         <script src="https://kit.fontawesome.com/9a7e657bee.js" crossorigin="anonymous"></script>
     </head>
 <body>
-<div class="container"></div>
-    <div class="container-fluid grid-main-inicio"></div>
-        <!--navbar-->
-        <nav class="navbar nav-ini navbar-expand-lg shadow-lg nav-textos-blancos" id="navbar-r">
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">
+
+    <!--navbar-->
+    <nav class="navbar nav-ini navbar-expand-lg shadow-lg nav-textos-blancos" id="navbar-r">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
                         <img src="https://cdn-icons-png.flaticon.com/512/6192/6192161.png" alt="Logo">
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                </ul>
-                <div class="center-span">
-                    <span>Gran Pollazo Vegano xDD</span>
-                </div>
-                <!-- boton usuario -->
-                <div class="menu-usuario dropdown">
-                <button class="boton-usuario" id="dropdownUsuario" data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="Recetas_user.html">Recetas</a></li>
+
+            </ul>
+            <div class="center-span">
+                <span>Gran Pollazo Vegano xDD</span>
+            </div>
+            <!-- BOTÓN USUARIO -->
+            <div class="menu-usuario dropdown" data-bs-auto-close="false">
+                <button class="boton-usuario" id="dropdownUsuario" data-bs-toggle="dropdown">
                     <i class="fa-solid fa-user"></i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" id="menuUsuario">
-                    <li><a class="dropdown-item" id="opcionLogin" href="Login.html">Iniciar sesión</a></li>
-                    <li><a class="dropdown-item" id="opcionRegistro" href="Registro.html">Registrarse</a></li>
+                    <li><a class="dropdown-item" id="btnAbrirLogin">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" id="btnAbrirRegistro">Registrarse</a></li>
+                    <li><hr class="dropdown-divider oculto" id="divisorUsuario"></li>
+                    <li><span class="dropdown-item correo-usuario oculto" id="correoMostrado"></span></li>
+                    <li><a class="dropdown-item oculto" id="btnMisRecetas" href="recetas_guardadas.html">Mis recetas</a></li>
+                    <li><a class="dropdown-item text-danger oculto" id="btnCerrarSesion">Cerrar sesión</a></li>
                 </ul>
-        </nav>
-
-        <!--Main grid-->
-        <div class="container-fluid grid-main-inicio nosotros">
-
-            <div class="row di-part">
-                <div class="col-6">
-                    <img src="https://www.civitatis.com/blog/wp-content/uploads/2022/12/paisajes-desierto-atacama-chile-scaled.jpg" alt="">
-                </div>
-                <div class="col-6">
-                    <h2>🌵 Ricardo Alfaro: El Arquitecto Digital del Desierto</h2>
-                    <p>Estudiante de Ing. en Computación e Informática (UDA) y originario de Copiapó. Como anfitrión del desierto, Ricardo combina la precisión del código con la inmensidad de Atacama para forjar soluciones innovadoras.</p>
-                </div>
-            </div>
-            
-            <div class="row di-part">
-                <div class="col-6">
-                    <h2>👨‍🌾 Matías Pérez: El Huaso que Programa</h2>
-                    <p>Matías "Huaso" Pérez Tapia, co-creador y también estudiante de Ing. en Computación e Informática (UDA). Aporta la visión pragmática del campo a la programación, demostrando que la mejor cosecha es un código limpio y funcional.</p>
-                </div>
-                <div class="col-6">
-                    <img src="https://media.istockphoto.com/id/543212762/es/foto/tractor-en-el-campo-de-primavera-relaciones-sean.jpg?s=612x612&w=0&k=20&c=ua9ZJb046xHKUDsRW2okFfKYJyNd12RMXZ8vESdjUHc=" alt="">
-                </div>
-            </div>
-            <div class="row di-part">
-                <div class="col-6">
-                    <img src="https://phantom.estaticos-marca.com/ea44d360ff7b7d9195fa9760de1612ce/resize/1200/f/webp/assets/multimedia/imagenes/2024/01/04/17044034534763.jpg" alt="">
-                </div>
-                <div class="col-6">
-                    <h2>💻 UDA: Fusión de Código y Tierra</h2>
-                    <p>Somos una dupla forjada en la Universidad de Atacama. Ricardo, la mente local de Copiapó, y Matías, el "Huaso" Pérez, uniendo desierto y campo en nuestra pasión por la informática. ¡El futuro digital se construye aquí!</p>
-                </div>
             </div>
         </div>
+    </nav>
 
-        <br><div class="container-fluid">
-            <!--Footer 1-->
-            <div id="row footer-1-ini">
-                <div class="col">
-                    <footer class="footer">
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2" class="nav-link"><a href="https://github.com/FutileLimon">FutileLimon</a></li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="+569 31142218">+56 9 3114 2218</a></li>
-                        </ul>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2" class="nav-link"><a href="https://github.com/Matias281205">Matias281205</a></li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="tel:+56 9 64 11 78 61">+56 9 6411 7861</a></li>
-                        </ul>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-github"></i></li>
-                            <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-whatsapp"></i></li>
-                        </ul>
-                    </footer>
-                </div>
+    <!--Main grid-->
+    <div class="container-fluid grid-main-inicio nosotros">
+
+        <div class="row di-part">
+            <div class="col-6">
+                <img src="https://www.civitatis.com/blog/wp-content/uploads/2022/12/paisajes-desierto-atacama-chile-scaled.jpg" alt="">
             </div>
-            <div class="py-3 my-3 border-top" id="footer-2-ini"><p>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025</p></div>
+            <div class="col-6">
+                <h2>🌵 Ricardo Alfaro: El Arquitecto Digital del Desierto</h2>
+                <p>Estudiante de Ing. en Computación e Informática (UDA) y originario de Copiapó. Como anfitrión del desierto, Ricardo combina la precisión del código con la inmensidad de Atacama para forjar soluciones innovadoras.</p>
+            </div>
         </div>
-
-        <div class="Top" id="toTop">
-            <i class="fa-solid fa-arrow-up"></i>
+        
+        <div class="row di-part">
+            <div class="col-6">
+                <h2>👨‍🌾 Matías Pérez: El Huaso que Programa</h2>
+                <p>Matías "Huaso" Pérez Tapia, co-creador y también estudiante de Ing. en Computación e Informática (UDA). Aporta la visión pragmática del campo a la programación, demostrando que la mejor cosecha es un código limpio y funcional.</p>
+            </div>
+            <div class="col-6">
+                <img src="https://media.istockphoto.com/id/543212762/es/foto/tractor-en-el-campo-de-primavera-relaciones-sean.jpg?s=612x612&w=0&k=20&c=ua9ZJb046xHKUDsRW2okFfKYJyNd12RMXZ8vESdjUHc=" alt="">
+            </div>
         </div>
+        <div class="row di-part">
+            <div class="col-6">
+                <img src="https://phantom.estaticos-marca.com/ea44d360ff7b7d9195fa9760de1612ce/resize/1200/f/webp/assets/multimedia/imagenes/2024/01/04/17044034534763.jpg" alt="">
+            </div>
+            <div class="col-6">
+                <h2>💻 UDA: Fusión de Código y Tierra</h2>
+                <p>Somos una dupla forjada en la Universidad de Atacama. Ricardo, la mente local de Copiapó, y Matías, el "Huaso" Pérez, uniendo desierto y campo en nuestra pasión por la informática. ¡El futuro digital se construye aquí!</p>
+            </div>
+        </div>
+    </div>
+
+    <br><div class="container-fluid">
+        <!--Footer 1-->
+        <div id="row footer-1-ini">
+            <div class="col">
+                <footer class="footer">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" class="nav-link"><a href="https://github.com/FutileLimon">FutileLimon</a></li>
+                        <li class="nav-item mb-2" class="nav-link"><a href="+569 31142218">+56 9 3114 2218</a></li>
+                    </ul>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" class="nav-link"><a href="https://github.com/Matias281205">Matias281205</a></li>
+                        <li class="nav-item mb-2" class="nav-link"><a href="tel:+56 9 64 11 78 61">+56 9 6411 7861</a></li>
+                    </ul>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-github"></i></li>
+                        <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-whatsapp"></i></li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div class="py-3 my-3 border-top" id="footer-2-ini"><p>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025</p></div>
+    </div>
+
+    <div class="Top" id="toTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
 
 
-        <script src="Js/api-tarjetas.js" ></script>
-        <script src="Js/cards.js"></script>
-        <script src="Js/navbar.js"></script>
-        <script src="Js/slides.js"></script>
-        <script src="Js/top-button.js"></script>
-    </body>
+    <script src="Js/api-tarjetas.js" ></script>
+    <script src="Js/cards.js"></script>
+    <script src="Js/navbar.js"></script>
+    <script src="Js/slides.js"></script>
+    <script src="Js/top-button.js"></script>
+</body>
 </html>
