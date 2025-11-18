@@ -260,73 +260,105 @@ p{
     }
 }
 
-/* === Modal PERSONALIZADO === */
+/* modal sesión */
+
 .modal-personalizado {
-    display: none !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 3000;
+    backdrop-filter: blur(6px);
 }
 
 .modal-personalizado.activo {
-    display: flex !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
+    display: flex;
 }
 
+/* Contenedor del modal */
 .contenido-modal {
-    background: $--Complementario2;
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 16px;
+    position: relative;
+    background: $--Neutro-claro;
+    border: 2px solid $--Complementario2;
+    border-radius: 18px;
     padding: 2rem;
-    color: $--Primario;
-    max-width: 700px;
+    color: $--Neutro-oscuro;
+    max-width: 450px;
     width: 90%;
-    overflow-y: auto;
-    max-height: 90vh;
-    box-shadow: $--Complementario;
-    animation: aparecerModal .3s ease forwards;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    animation: aparecerModal .3s ease-out;
 }
 
+
+/* Títulos */
 .contenido-modal h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    color: $--Complementario2; 
     text-align: center;
-    text-shadow: 0 0 10px red;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
 }
 
-.contenido-modal img {
-    width: 100%;
+/* Inputs */
+.contenido-modal input {
+    background: $--color-1;
+    border: 1px solid $--Neutro-medio;
+    color: $--color-text-p;
+    padding: .55rem .75rem;
     border-radius: 10px;
-    margin: 1rem 0;
+
+    &:focus {
+        border-color: $--Complementario;
+        box-shadow: 0 0 8px rgba(42, 157, 143, .4);
+    }
 }
 
+/* Botón enviar */
+.contenido-modal .boton-principal {
+    background: $--Primario !important;
+    color: #fff !important;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: .25s;
+}
+
+.contenido-modal .boton-principal:hover {
+    background: $--Secundario !important;
+    transform: translateY(-1px);
+}
+
+/* Botón cerrar */
 .cerrar-modal {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 15px;
     border: none;
     background: transparent;
     font-size: 2rem;
     color: $--Complementario;
     cursor: pointer;
-    transition: 0.2s;
+    transition: .2s;
+    &:hover {
+        color: $--Primario;
+        transform: scale(1.1);
+    }
 }
 
-.cerrar-modal:hover { 
-    color: $--Complementario2; 
-    transform: scale(1.1); 
-}
-
-/* Animación modal */
+/* Animación suave */
 @keyframes aparecerModal {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .tarjetas-recetas{
