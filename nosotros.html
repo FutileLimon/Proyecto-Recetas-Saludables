@@ -106,7 +106,27 @@
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
-
+        <!-- MODAL REGISTRO -->
+    <div class="modal-personalizado" id="modalRegistroPersonal">
+        <div class="contenido-modal">
+            <!-- Botón cerrar -->
+            <button class="cerrar-modal" id="cerrarRegistro">&times;</button>
+            <!-- Título -->
+            <h2>Crear cuenta</h2>
+            <!-- Formulario -->
+            <form id="formRegistro">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="regCorreo" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="regPass" required>
+                </div>
+                <button type="submit" class="btn boton-principal w-100">Registrarse</button>
+            </form>
+        </div>
+    </div>
     <script src="Js/api-tarjetas.js" ></script>
     <script src="Js/cards.js"></script>
     <script src="Js/navbar.js"></script>
