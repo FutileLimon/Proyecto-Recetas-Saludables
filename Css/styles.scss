@@ -537,3 +537,74 @@ p{
     gap: 20px;
     padding: 20px;
 }
+
+/* ==============================
+    ESTILOS PARA LA PÁGINA RECETAS
+   ============================== */
+
+.formulario-contacto {
+    background: $--Neutro-claro;
+    border: 2px solid $--Neutro-medio;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.formulario-contacto label {
+    color: $--Complementario2;
+    font-weight: bold;
+}
+
+.formulario-contacto .form-control,
+.formulario-contacto .form-select,
+.formulario-contacto textarea {
+    background: $--Neutro-claro;
+    border: 1px solid $--Neutro-medio;
+    color: $--color-text-p;
+
+    &:focus {
+        border-color: $--Complementario;
+        box-shadow: 0 0 8px rgba(42,157,143,.3);
+    }
+}
+
+.boton-form-contacto {
+    background: $--Primario !important;
+    color: white !important;
+    border-radius: 10px;
+    border: none;
+    transition: .25s;
+
+    &:hover {
+        background: $--Secundario !important;
+        transform: translateY(-1px);
+    }
+}
+
+/* TARJETAS */
+.tarjetas-recetas h3 {
+    color: $--Complementario2;
+}
+
+.tarjeta-receta {
+    background: $--color-1;
+    border: 1px solid $--Neutro-medio;
+    border-radius: 15px;
+    padding: 1rem;
+    color: $--color-text-p;
+}
+
+
+
+.dropdown-menu {
+    background: $--Neutro-claro !important;
+    border: 1px solid $--Neutro-medio !important;
+
+    .dropdown-item {
+        color: $--Complementario2 !important;
+
+        &:hover {
+            background: $--color-3 !important;
+            color: $--Primario !important;
+        }
+    }
+}

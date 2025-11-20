@@ -994,4 +994,70 @@ p {
   padding: 20px;
 }
 
+/* ==============================
+    ESTILOS PARA LA PÁGINA RECETAS
+   ============================== */
+.formulario-contacto {
+  background: #FFFBF7;
+  border: 2px solid #E0DED8;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.formulario-contacto label {
+  color: #264653;
+  font-weight: bold;
+}
+
+.formulario-contacto .form-control,
+.formulario-contacto .form-select,
+.formulario-contacto textarea {
+  background: #FFFBF7;
+  border: 1px solid #E0DED8;
+  color: #4C4B46;
+}
+.formulario-contacto .form-control:focus,
+.formulario-contacto .form-select:focus,
+.formulario-contacto textarea:focus {
+  border-color: #2A9D8F;
+  box-shadow: 0 0 8px rgba(42, 157, 143, 0.3);
+}
+
+.boton-form-contacto {
+  background: #E76F51 !important;
+  color: white !important;
+  border-radius: 10px;
+  border: none;
+  transition: 0.25s;
+}
+.boton-form-contacto:hover {
+  background: #F4A261 !important;
+  transform: translateY(-1px);
+}
+
+/* TARJETAS */
+.tarjetas-recetas h3 {
+  color: #264653;
+}
+
+.tarjeta-receta {
+  background: #F9F5EF;
+  border: 1px solid #E0DED8;
+  border-radius: 15px;
+  padding: 1rem;
+  color: #4C4B46;
+}
+
+.dropdown-menu {
+  background: #FFFBF7 !important;
+  border: 1px solid #E0DED8 !important;
+}
+.dropdown-menu .dropdown-item {
+  color: #264653 !important;
+}
+.dropdown-menu .dropdown-item:hover {
+  background: #FAF7F2 !important;
+  color: #E76F51 !important;
+}
+
 /*# sourceMappingURL=styles.css.map */
