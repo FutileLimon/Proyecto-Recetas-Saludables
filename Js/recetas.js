@@ -1,22 +1,48 @@
-// =============== RECETAS LOCAL STORAGE MOSTRADAS EN TARJETAS ===============
+// =============== RECETAS LOCAL STORAGE + VALIDACIÓN ==========
 
 // Contenedor donde se mostrarán las tarjetas
 const contenedorTarjetas = document.querySelector('.tarjetas');
 
-// Cargar recetas guardadas al cargar la página
+// Capturar formulario
+const formulario = document.getElementById("form-contacto");
+const emailInput = document.getElementById("Email");
+
+// ========== AUTO-RELLENO DEL EMAIL SEGÚN SESIÓN ==========
+function actualizarEmailFormulario() {
+    const usuarioActivo = localStorage.getItem("usuarioActivo");
+
+    if (usuarioActivo) {
+        emailInput.value = usuarioActivo;   // Rellenar email
+        emailInput.readOnly = true;         // No editable
+        emailInput.classList.add("bg-light");
+    } else {
+        emailInput.value = "Debe iniciar sesión";  
+        emailInput.readOnly = true;         // También bloqueado
+        emailInput.classList.add("bg-light");
+    }
+}
+
+// Ejecutar apenas cargue el DOM
 document.addEventListener("DOMContentLoaded", () => {
+    actualizarEmailFormulario();
     mostrarRecetasGuardadas();
 });
 
-// Capturar formulario
-const formulario = document.getElementById("form-contacto");
+// =============== GUARDAR RECETA ==============================
 
-// Guardar receta al enviar formulario
 formulario.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const usuarioActivo = localStorage.getItem("usuarioActivo");
+
+    // Bloqueo si no hay sesión
+    if (!usuarioActivo) {
+        alert("Debes iniciar sesión para subir una receta.");
+        return;
+    }
+
     const nombre = document.getElementById("input_nombre").value;
-    const email = document.getElementById("Email").value;
+    const email = usuarioActivo;  // SIEMPRE el correo de la sesión
     const asunto = document.getElementById("asunto").value;
     const mensaje = document.getElementById("mensaje").value;
 
@@ -35,10 +61,11 @@ formulario.addEventListener("submit", function (e) {
 
     mostrarRecetasGuardadas();
     formulario.reset();
+    actualizarEmailFormulario(); // Reponer email bloqueado tras reset
 });
 
+// =============== MOSTRAR TARJETAS ============================
 
-// =============== MOSTRAR TARJETAS ===============
 function mostrarRecetasGuardadas() {
     const recetas = JSON.parse(localStorage.getItem("recetas_user")) || [];
 
@@ -50,7 +77,9 @@ function mostrarRecetasGuardadas() {
         tarjeta.classList.add('tarjeta-receta');
 
         tarjeta.innerHTML = `
-            <div class="imagen-receta" style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); background-size:cover;"></div>
+            <div class="imagen-receta" 
+                 style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); background-size:cover;">
+            </div>
 
             <div class="cuerpo-receta">
                 <span class="subtitulo">${receta.asunto}</span>
@@ -71,8 +100,8 @@ function mostrarRecetasGuardadas() {
     activarBotonesUser();
 }
 
+// =============== ACTIVAR BOTONES =============================
 
-// =============== ACTIVAR BOTONES ===============
 function activarBotonesUser() {
     // Ver detalles
     document.querySelectorAll('.ver-receta').forEach(btn => {
@@ -102,8 +131,8 @@ function activarBotonesUser() {
     });
 }
 
+// =============== MODAL DETALLE ===============================
 
-// =============== MODAL DETALLE ===============
 function mostrarDetalleUser(receta) {
     // Si ya hay un modal abierto → no abrir otro
     if (document.querySelector('.modal')) return;
