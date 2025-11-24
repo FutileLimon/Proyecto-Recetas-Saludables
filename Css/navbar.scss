@@ -211,3 +211,11 @@ nav span {
 .modal-login { 
     z-index: 3000; 
 }
+
+#titulo-navbar {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: $--color-2 !important;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

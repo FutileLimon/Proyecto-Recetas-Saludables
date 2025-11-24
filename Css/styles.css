@@ -211,6 +211,14 @@ nav span {
   z-index: 3000;
 }
 
+#titulo-navbar {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #E4C59E !important;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 footer {
   background-color: #2A2A28;
   display: grid;
@@ -1058,6 +1066,35 @@ p {
 .dropdown-menu .dropdown-item:hover {
   background: #FAF7F2 !important;
   color: #E76F51 !important;
+}
+
+.carousel-inner img {
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  #carouselExampleIndicators {
+    display: none;
+  }
+  .container-fotos {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  #carouselExampleIndicators {
+    display: flex;
+  }
+  .container-fotos {
+    display: none;
+  }
+  .titulo-section h2 {
+    font-size: 3.5em;
+    padding-inline: 2%;
+  }
+  .texto-sobre-img p {
+    font-size: 2.1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

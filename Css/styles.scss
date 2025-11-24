@@ -608,3 +608,39 @@ p{
         }
     }
 }
+
+
+//Inicio Carrousel
+.carousel-inner{
+    img{
+        height: 500px;
+        object-fit: cover;
+    }
+}
+//pantalla normal
+@media (min-width: 768px) {
+    #carouselExampleIndicators{
+        display: none;
+    }
+    .container-fotos{
+        display: flex;
+    }
+}
+//movil
+@media (max-width: 768px) {
+    #carouselExampleIndicators{
+        display: flex;
+    }
+    .container-fotos{
+        display: none;
+    }
+    .titulo-section h2{
+        font-size: 3.5em;
+        padding-inline: 2%;
+    }
+    .texto-sobre-img{
+        p{
+            font-size: 2.1rem;
+        }
+    }
+}
