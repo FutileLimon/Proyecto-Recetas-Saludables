@@ -1,4 +1,7 @@
-// === Configuración inicial ===
+// ==========================================================
+// Configuración inicial
+// ==========================================================
+
 const contenedorTarjetas = document.querySelector('.tarjetas');
 const botonVerMas = document.getElementById('verMas');
 
@@ -6,31 +9,39 @@ let pagina = 0;
 const recetasPorPagina = 6;
 let recetas = [];
 
+const CALORIE_NINJAS_KEY = "TU_API_KEY_AQUI"; // <-- PON TU KEY
+
+
+// ==========================================================
+// CARGA TODAS LAS RECETAS DE TODAS LAS CATEGORÍAS
+// ==========================================================
 
 async function cargarTodasLasRecetas() {
-    // 1) Obtener categorías
     const respCat = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list");
     const datosCat = await respCat.json();
     const categorias = datosCat.meals.map(c => c.strCategory);
 
     let todas = [];
 
-    // 2) Para cada categoría traer recetas
     for (const categoria of categorias) {
         const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`);
         const datos = await resp.json();
         if (datos.meals) {
-            datos.meals.forEach(r => r.strCategory = categoria); // Añadir categoría
+            datos.meals.forEach(r => r.strCategory = categoria);
             todas.push(...datos.meals);
         }
     }
 
-    // 3) Eliminar duplicados
+    // Eliminar duplicados
     const mapa = new Map();
     todas.forEach(r => mapa.set(r.idMeal, r));
     return Array.from(mapa.values());
 }
 
+
+// ==========================================================
+// MOSTRAR RECETAS (PAGINADO)
+// ==========================================================
 
 async function cargarRecetas() {
     if (!contenedorTarjetas) return;
@@ -38,7 +49,6 @@ async function cargarRecetas() {
     recetas = await cargarTodasLasRecetas();
     mostrarRecetas();
 }
-
 
 function mostrarRecetas() {
     const inicio = pagina * recetasPorPagina;
@@ -64,19 +74,95 @@ function mostrarRecetas() {
 
     pagina++;
     if (pagina * recetasPorPagina >= recetas.length) {
-        botonVerMas.style.display = 'none';
+        if (botonVerMas) botonVerMas.style.display = 'none';
     }
 }
 
+
+// ==========================================================
+// OBTENER INGREDIENTES FORMATEADOS PARA NUTRICIÓN
+// ==========================================================
+
+function obtenerIngredientesTexto(receta) {
+    let lista = [];
+
+    for (let i = 1; i <= 20; i++) {
+        let ing = receta[`strIngredient${i}`];
+        let cant = receta[`strMeasure${i}`];
+
+        if (!ing || ing.trim() === "") continue;
+
+        // limpiar textos problemáticos
+        ing = ing.replace(/[^\w\s]/gi, "").trim();
+
+        if (!cant || cant === "" || cant.includes("to taste") || cant.includes("as needed")) {
+            cant = "1 unit";
+        }
+
+        lista.push(`${cant} ${ing}`);
+    }
+
+    return lista.join(", ");
+}
+
+
+// ==========================================================
+// CONSULTAR API NUTRICIONAL (CalorieNinjas)
+// ==========================================================
+
+async function obtenerNutricion(ingredientesTexto) {
+    try {
+        const resp = await fetch(
+            `https://api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(ingredientesTexto)}`,
+            {
+                headers: { "X-Api-Key": CALORIE_NINJAS_KEY }
+            }
+        );
+
+        if (!resp.ok) {
+            console.error("Error nutrición:", await resp.text());
+            return null;
+        }
+
+        const data = await resp.json();
+        return data.items || [];
+
+    } catch (error) {
+        console.error("Error nutricional:", error);
+        return null;
+    }
+}
+
+
+// ==========================================================
+// MOSTRAR DETALLE + NUTRICIÓN
+// ==========================================================
 
 async function mostrarDetalle(id) {
 
     if (document.querySelector('.modal-personalizado.activo')) return;
 
-    const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-    const datos = await respuesta.json();
+    // Obtener receta completa
+    const resp = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const datos = await resp.json();
     const receta = datos.meals[0];
 
+    // Ingredientes en texto
+    const ingredientesTexto = obtenerIngredientesTexto(receta);
+
+    // Obtener nutrición
+    const nutricionItems = await obtenerNutricion(ingredientesTexto);
+
+    let kcal = "N/A", prote = "N/A", carb = "N/A", fat = "N/A";
+
+    if (nutricionItems && nutricionItems.length > 0) {
+        kcal = nutricionItems.reduce((a, b) => a + b.calories, 0).toFixed(0);
+        prote = nutricionItems.reduce((a, b) => a + b.protein_g, 0).toFixed(1);
+        carb = nutricionItems.reduce((a, b) => a + b.carbohydrates_total_g, 0).toFixed(1);
+        fat = nutricionItems.reduce((a, b) => a + b.fat_total_g, 0).toFixed(1);
+    }
+
+    // Crear modal
     const modal = document.createElement("div");
     modal.className = "modal-personalizado activo";
 
@@ -87,6 +173,12 @@ async function mostrarDetalle(id) {
             <h2>${receta.strMeal}</h2>
 
             <img src="${receta.strMealThumb}" alt="${receta.strMeal}" class="img-detalle">
+
+            <h3>Información Nutricional</h3>
+            <p><strong>Calorías:</strong> ${kcal}</p>
+            <p><strong>Proteínas:</strong> ${prote} g</p>
+            <p><strong>Carbohidratos:</strong> ${carb} g</p>
+            <p><strong>Grasas:</strong> ${fat} g</p>
 
             <h3>Ingredientes</h3>
             <ul class="lista-ingredientes">
@@ -112,6 +204,10 @@ async function mostrarDetalle(id) {
     });
 }
 
+
+// ==========================================================
+// GUARDAR RECETA CON DETALLE COMPLETO
+// ==========================================================
 
 async function guardarReceta(id, boton) {
     const usuario = (localStorage.getItem("usuarioActivo") || "").trim();
@@ -147,9 +243,11 @@ async function guardarReceta(id, boton) {
 }
 
 
+// ==========================================================
+// EVENTOS
+// ==========================================================
 
 document.addEventListener("click", (e) => {
-
     if (e.target.classList.contains("ver-receta")) {
         e.preventDefault();
         mostrarDetalle(e.target.dataset.id);
@@ -160,11 +258,13 @@ document.addEventListener("click", (e) => {
     }
 });
 
-
-
 if (botonVerMas) {
     botonVerMas.addEventListener('click', mostrarRecetas);
 }
 
-// Inicializar
+
+// ==========================================================
+// INICIO
+// ==========================================================
+
 cargarRecetas();
