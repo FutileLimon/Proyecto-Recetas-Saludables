@@ -31,7 +31,6 @@ nav{
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
     img{
-        // border: 2px solid black;
         border-radius: 20%;
         width: 45px;
         height: 45px;
@@ -48,7 +47,6 @@ nav{
         font-weight: thin;
         letter-spacing: -0.5px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-
     }
 }
 
@@ -59,10 +57,8 @@ nav a:hover{
 }
 
 nav img:hover{
-    // border: 2.5px solid $--Complementario;
     transition: 0.8s ease;
     border-radius: 50%;
-    // box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     filter: drop-shadow(0px 0px 10px rgba($--Complementario , 0.8));
 }
 .nav-textos-blancos{
@@ -218,4 +214,38 @@ nav span {
     color: $--color-2 !important;
     letter-spacing: -1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+//pantalla normal
+@media (min-width: 768px) {
+    #carouselExampleIndicators{
+        display: none;
+    }
+    .nav-visual-2{
+        display: none;
+    }
+}
+//movil
+@media (max-width: 768px) {
+    .navbar-nav{
+        gap: 0 !important;        
+    }
+    .ul{
+        gap: 0 !important;
+    }
+    li {
+        a{
+            font-size: 1rem !important;
+        }
+    }
+    #titulo-navbar{
+        display: none;
+    }
+    .nav-visual-1{
+        display: none;
+    }
+}
+.dropdown-item:hover{
+    border-radius: 25px;
+    transition: 0.6s ease;
 }

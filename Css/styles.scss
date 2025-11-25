@@ -645,6 +645,11 @@ p{
 }
 //movil
 @media (max-width: 768px) {
+    .div-titulo{
+        h1{
+            font-size: 4rem !important;
+        }
+    }
     #carouselExampleIndicators{
         display: flex;
     }

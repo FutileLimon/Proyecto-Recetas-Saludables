@@ -219,6 +219,36 @@ nav span {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+@media (min-width: 768px) {
+  #carouselExampleIndicators {
+    display: none;
+  }
+  .nav-visual-2 {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav {
+    gap: 0 !important;
+  }
+  .ul {
+    gap: 0 !important;
+  }
+  li a {
+    font-size: 1rem !important;
+  }
+  #titulo-navbar {
+    display: none;
+  }
+  .nav-visual-1 {
+    display: none;
+  }
+}
+.dropdown-item:hover {
+  border-radius: 25px;
+  transition: 0.6s ease;
+}
+
 footer {
   background-color: #2A2A28;
   display: grid;
@@ -1099,6 +1129,9 @@ p {
   }
 }
 @media (max-width: 768px) {
+  .div-titulo h1 {
+    font-size: 4rem !important;
+  }
   #carouselExampleIndicators {
     display: flex;
   }
