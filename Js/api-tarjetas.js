@@ -118,7 +118,7 @@ async function guardarReceta(id, boton) {
         return;
     }
 
-    // ⚠ PEDIR DETALLE COMPLETO de la receta (AQUÍ viene strCategory)
+    // PEDIR DETALLE COMPLETO de la receta (AQUÍ viene strCategory)
     const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     const datos = await respuesta.json();
     const recetaCompleta = datos.meals[0];

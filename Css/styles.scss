@@ -187,21 +187,15 @@ p{
     z-index: 1000;
 }
 
-.bloque-imagen-2 img {
-    width: 100%;
-    height: 700px; //altura imagen
-    display: block;
-    object-fit: cover;
-}
-
+.bloque-imagen-2 img,
 .bloque-imagen-3 img {
     width: 100%;
-    height: 700px; //altura imagen
+    height: 750px; //altura imagen
     display: block;
     object-fit: cover;
 }
 
-.bloque-imagen-1,
+
 .bloque-imagen-2,
 .bloque-imagen-3 {
     position: relative;
@@ -209,24 +203,47 @@ p{
 }
 
 
-.texto-sobre-img {
+.texto-sobre-img1 {
     position: absolute;
     inset: 0;
     display: flex;
-    justify-content: left;
-    padding: 6rem 4rem;
-    text-align: center;
+    justify-content: flex-start;   // izquierda
+    align-items: flex-start;           // arriba
+    padding: 8rem 4rem;           
+    text-align: left;
 }
 
-.texto-sobre-img p {
+.texto-sobre-img1 p {
     color: $--color-2;
     font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
     line-height: 1.5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-weight: 600;
+    font-weight: 800;
+    max-width: 740px; // 🔥 TEXTO COMPACTO
+    width: 100%;
     margin: 0;
 }
 
+.texto-sobre-img2 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-start;   // izquierda
+    align-items: flex-start;           // arriba
+    padding: 13rem 5rem;           
+    text-align: left;
+}
+
+.texto-sobre-img2 p {
+    color: $--color-2;
+    font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+    max-width: 800px; // 🔥 TEXTO COMPACTO
+    width: 100%;
+    margin: 0;
+}
 
 //pagina nosotros
 .nosotros{
