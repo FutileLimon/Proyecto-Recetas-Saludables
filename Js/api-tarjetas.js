@@ -6,9 +6,7 @@ let pagina = 0;
 const recetasPorPagina = 6;
 let recetas = [];
 
-// ================================================================
-// 🔥 Cargar TODAS las recetas de TODAS las categorías
-// ================================================================
+
 async function cargarTodasLasRecetas() {
     // 1) Obtener categorías
     const respCat = await fetch("https://www.themealdb.com/api/json/v1/1/list.php?c=list");
@@ -33,9 +31,7 @@ async function cargarTodasLasRecetas() {
     return Array.from(mapa.values());
 }
 
-// ================================================================
-// Cargar recetas en pantalla
-// ================================================================
+
 async function cargarRecetas() {
     if (!contenedorTarjetas) return;
 
@@ -43,9 +39,7 @@ async function cargarRecetas() {
     mostrarRecetas();
 }
 
-// ================================================================
-// Mostrar recetas en tarjetas
-// ================================================================
+
 function mostrarRecetas() {
     const inicio = pagina * recetasPorPagina;
     const fin = inicio + recetasPorPagina;
@@ -74,9 +68,7 @@ function mostrarRecetas() {
     }
 }
 
-// ================================================================
-// Modal detalle
-// ================================================================
+
 async function mostrarDetalle(id) {
 
     if (document.querySelector('.modal-personalizado.activo')) return;
@@ -120,9 +112,7 @@ async function mostrarDetalle(id) {
     });
 }
 
-// ================================================================
-// Guardar receta (con categoría incluida)
-// ================================================================
+
 async function guardarReceta(id, boton) {
     const usuario = (localStorage.getItem("usuarioActivo") || "").trim();
 
@@ -156,9 +146,8 @@ async function guardarReceta(id, boton) {
     boton.classList.add("guardado-exito");
 }
 
-// ================================================================
-// Delegación de eventos
-// ================================================================
+
+
 document.addEventListener("click", (e) => {
 
     if (e.target.classList.contains("ver-receta")) {
@@ -171,7 +160,8 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// ================================================================
+
+
 if (botonVerMas) {
     botonVerMas.addEventListener('click', mostrarRecetas);
 }
