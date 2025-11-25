@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Nosotros</title>
+        <title>Recetas</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
@@ -52,47 +52,65 @@
             </div>
         </div>
     </nav>
-
     <!--Main grid-->
-    <div class="container-fluid grid-main-inicio nosotros">
+        <!--Formulario-->
+    <div class="row formulario mt-5 no-color row-contacto-1" style="display : flex;">
+        <div class="col-8 formulario-contacto shadow-lg">
+            <form class="container-6" id="form-contacto" method="POST">
+                <div class="row mb-3 py-2">
+                    <div class="col-sm-12">
+                        <label class="form-label" for="Nombre">Nombre del plato:</label>
+                    </div>
+                    <div class="col-sm-12 d-flex gap-1">
+                        <input class="form-control" type="text" id="input_nombre" name="Nombre" placeholder="ej: Pollo apanado" required>                            
+                    </div>
+                </div>
 
-        <!-- <div class="row di-part">
-            <div class="col-12">
-                <h2>Sobre Nosotros</h2>
-            </div>
-        </div> -->
+                <div class="row py-2">
+                    <div class="col-md-12">
+                        <label class="form-label" for="Email">Email:  </label>
+                        <input class="form-control" type="text" id="Email" name="Email" placeholder="ejemplo@gmail.com">
+                    </div>
+                </div>
 
-        <div class="row di-part">
-            <div class="col-md-6 order-2 order-md-1">
-                <img src="https://www.civitatis.com/blog/wp-content/uploads/2022/12/paisajes-desierto-atacama-chile-scaled.jpg" alt="">
-            </div>
-            <div class="col-md-6 order-1 order-md-2">
-                <h2>🌵 Ricardo Alfaro: El Arquitecto Digital del Desierto</h2>
-                <p>Estudiante de Ing. en Computación e Informática (UDA) y originario de Copiapó. Como anfitrión del desierto, Ricardo combina la precisión del código con la inmensidad de Atacama para forjar soluciones innovadoras.</p>
-            </div>
-        </div>
-        
-        <div class="row di-part">
-            <div class="col-md-6">
-                <h2>👨‍🌾 Matías Pérez: El Huaso que Programa</h2>
-                <p>Matías "Huaso" Pérez Tapia, co-creador y también estudiante de Ing. en Computación e Informática (UDA). Aporta la visión pragmática del campo a la programación, demostrando que la mejor cosecha es un código limpio y funcional.</p>
-            </div>
-            <div class="col-md-6">
-                <img src="https://media.istockphoto.com/id/543212762/es/foto/tractor-en-el-campo-de-primavera-relaciones-sean.jpg?s=612x612&w=0&k=20&c=ua9ZJb046xHKUDsRW2okFfKYJyNd12RMXZ8vESdjUHc=" alt="">
-            </div>
-        </div>
-        <div class="row di-part">
-            <div class="col-md-6 order-2 order-md-1">
-                <img src="https://phantom.estaticos-marca.com/ea44d360ff7b7d9195fa9760de1612ce/resize/1200/f/webp/assets/multimedia/imagenes/2024/01/04/17044034534763.jpg" alt="">
-            </div>
-            <div class="col-md-6 order-1 order-md-2">
-                <h2>💻 UDA: Fusión de Código y Tierra</h2>
-                <p>Somos una dupla forjada en la Universidad de Atacama. Ricardo, la mente local de Copiapó, y Matías, el "Huaso" Pérez, uniendo desierto y campo en nuestra pasión por la informática. ¡El futuro digital se construye aquí!</p>
-            </div>
+                <div class="row py-2">
+                    <div class="col">
+                        <label class="form-label" for="asunto">Asunto:</label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="asunto" id="asunto">
+                            <option value="carnivoro">Carnivoro</option>
+                            <option value="vegano">Vegano</option>
+                            <option value="vegetariano">Vegetariano</option>
+                            <option value="ovolactovegetariano">Ovolactovegetariano</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row py-2">
+                    <div class="col"><label class="form-label" for="mensaje">Receta Detallada:</label></div>
+                    <div class="col"><textarea class="form-control" name="mensaje" id="mensaje" rows="6" cols="40" placeholder="inserte texto"></textarea></div>
+                </div>
+                <button class="btn btn-primary boton-form-contacto" type="submit">Subir Receta</button>
+            </form>
         </div>
     </div>
 
-    <br>
+        <div class="row">
+            <div class="col-12 tarjetas-recetas">
+                <h3>Recetas Ingresadas:</h3>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tarjetas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     <div class="container-fluid">
         <!--Footer 1-->
         <div id="row footer-1-ini">
@@ -121,6 +139,7 @@
         <i class="fa-solid fa-arrow-up"></i>
     </div>
 
+
     <!-- MODAL LOGIN -->
     <div class="modal-personalizado" id="modalLoginPersonal">
         <div class="contenido-modal">
@@ -139,8 +158,7 @@
             </form>
         </div>
     </div>
-
-        <!-- MODAL REGISTRO -->
+    <!-- MODAL REGISTRO -->
     <div class="modal-personalizado" id="modalRegistroPersonal">
         <div class="contenido-modal">
             <!-- Botón cerrar -->
@@ -162,11 +180,10 @@
         </div>
     </div>
 
-    <script src="Js/api-tarjetas.js" ></script>
-    <script src="Js/cards.js"></script>
     <script src="Js/navbar.js"></script>
     <script src="Js/slides.js"></script>
     <script src="Js/top-button.js"></script>
     <script src="Js/login.js"></script>
+    <script src="Js/recetas.js"></script>
 </body>
 </html>

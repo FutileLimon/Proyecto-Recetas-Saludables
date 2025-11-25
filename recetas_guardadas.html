@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html> 
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Contacto</title>
+        <title>Mis recetas</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/541/541686.png">
         <script src="https://kit.fontawesome.com/9a7e657bee.js" crossorigin="anonymous"></script>
-
+    </head>
 <body>
+
     <!-- NAVBAR -->
     <nav class="navbar nav-ini navbar-expand shadow-lg nav-textos-blancos" id="navbar-r">
         <div class="collapse navbar-collapse" id="navbarScroll">
@@ -53,44 +54,29 @@
         </div>
     </nav>
 
-    <!-- CONTACTO -->
-    <div class="contacto-section">
-        <div class="contacto-container shadow-lg">
-            <div class="titulo-contacto">
-                <h1>Contáctanos</h1>
-                <p>
-                    Escríbenos tus dudas, comentarios o sugerencias.  
-                    ¡Estamos felices de ayudarte!
-                </p>
+    <!--Main grid-->
+    <div class="container-fluid grid-main-inicio">
+        <div class="container-fluid mt-5">
+            <h3 class="text-center">Mis Estadísticas</h3>
+            <div class="d-flex justify-content-center">
+                <img id="graficoFavoritos" src="#" alt="Gráfico de Categorías de Recetas" style="max-width: 700px;">
             </div>
-            <form action="" id="contacto-form" class="contacto-form">
-                <div class="grupo-input">
-                    <div class="label">Nombre</div>
-                    <input type="text" id="c_nombre" class="input-contacto" placeholder="Tu nombre" required>
-                </div>
-                <div class="grupo-input">
-                    <div class="label">Correo electrónico</div>
-                    <input type="email" id="c_email" class="input-contacto" placeholder="ejemplo@gmail.com" required>
-                </div>
-                <div class="grupo-input">
-                    <div class="label">Asunto</div>
-                    <div class="select-contacto">
-                        <select id="c_asunto">
-                            <option value="consulta">Consulta</option>
-                            <option value="reclamo">Reclamo</option>
-                            <option value="sugerencia">Sugerencia</option>
-                        </select>
+        </div>
+        <div class="row">
+            <div class="col-12 tarjetas-recetas">
+                <h3>Recetas Guardadas:</h3>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tarjetas"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="grupo-input">
-                    <div class="label">Mensaje</div>
-                    <textarea id="c_mensaje" class="input-contacto textarea-contacto" rows="6"
-                        placeholder="Escribe tu mensaje..."></textarea>
-                </div>
-                <div class="btn-enviar-contacto" id="btnEnviarContacto" type="submit">Enviar Mensaje</div>
-            </form>
+            </div>
         </div>
     </div>
+    
+
     <div class="container-fluid">
         <!--Footer 1-->
         <div id="row footer-1-ini">
@@ -118,6 +104,8 @@
     <div class="Top" id="toTop">
         <i class="fa-solid fa-arrow-up"></i>
     </div>
+
+
     <!-- MODAL LOGIN -->
     <div class="modal-personalizado" id="modalLoginPersonal">
         <div class="contenido-modal">
@@ -136,8 +124,7 @@
             </form>
         </div>
     </div>
-
-        <!-- MODAL REGISTRO -->
+    <!-- MODAL REGISTRO -->
     <div class="modal-personalizado" id="modalRegistroPersonal">
         <div class="contenido-modal">
             <!-- Botón cerrar -->
@@ -158,9 +145,11 @@
             </form>
         </div>
     </div>
-    <script src="Js/contacto.js"></script>
+
     <script src="Js/navbar.js"></script>
+    <script src="Js/slides.js"></script>
     <script src="Js/top-button.js"></script>
     <script src="Js/login.js"></script>
+    <script src="Js/mis-recetas.js"></script>
 </body>
 </html>

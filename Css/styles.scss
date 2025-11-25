@@ -1,11 +1,13 @@
 @import 'colors';
 @import 'navbar';
 @import 'footer';
+@import 'api-cards';
+@import 'formularios';
 
 $font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
 
 @mixin grid-main-perso($var: ""){
-    background-color: $--color-1;
+    background: $--color-1;
     width: 100%;
     height: auto;
     place-content: center;
@@ -14,22 +16,6 @@ $font-principal: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
 @mixin col-descuadra(){
     background-color: 0;
     border: 0;
-}
-@mixin texto-sobre-img-mixin($x, $y, $w, $h1, $h2){
-    position: absolute;
-    transform: translate($x, $y);
-    text-align: center;
-    width: $w;
-    h2{
-        color: $--color-1;
-        font-size: $h1;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-    p{
-        color: $--Neutro-oscuro;
-        // font-size: $h2;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    }
 }
 
 .grid-main-inicio{
@@ -53,10 +39,11 @@ html,body{
     padding: 0;
     padding-inline: 0;
     padding-top: 40px;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6{
     text-align: center;
-    margin: 6px 6px; 
+    margin: 0 auto; 
     color: #2C2C2C;
 }
 * {
@@ -66,15 +53,17 @@ h1, h2, h3, h4, h5, h6{
 
 p{
     text-align: justify;
-    margin: 7px 7px;
+    margin: 3px 3px;
     padding: 6px;
     font-size: 1.19em;
     color: $--color-text-p;
 }
-img{
+img {
     width: 100%;
     height: 100%;
+    justify-content: center;
 }
+
 .titulo{
     font-size: 45px;
     font-weight: 500;
@@ -146,39 +135,534 @@ img{
 .container-foto{
     display: flex;
 }
-#carouselPerfumes img{
-    flex-grow: 1;
-    object-fit: cover;
-}
 
-.texto-sobre-img-1{
-    @include texto-sobre-img-mixin(8%, -300%, 43%, 3.5em, 1.95em);
-}
-.texto-sobre-img-2{
-    @include texto-sobre-img-mixin(120%, -320%, 43%, 3.5em, 1.6em);
-}
-.texto-sobre-img-3{
-    @include texto-sobre-img-mixin(10%, -155%, 40%, 4.7em, 1.8em);
-}
-.texto-sobre-img-4{
-    @include texto-sobre-img-mixin(10%, -120%, 45%, 3.7em, 2.1em);
-    p{
-        color: $--color-1;
-    }
-}
 .section-ini{
     margin-top: 0%;
     margin-bottom: 0%;
     
 }
 .titulo-section{
-    background-color: $--Neutro-oscuro;
+    background: $--fondo-gradiente1;
     h2{
         font-size: 6.7em;
         font-weight: bold;
         color: $--color-2;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        margin-top: 6%;
-        margin-bottom: 6%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
+p{
+    text-align: justify;
+}
+
+.scroll-element {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+.slide-left {
+    transform: translateX(-80px);
+}
+.slide-right {
+    transform: translateX(80px);
+}
+.scroll-element.scrolled {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.Top{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: $--color-2;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: block;
+    z-index: 1000;
+}
+
+.bloque-imagen-2 img,
+.bloque-imagen-3 img {
+    width: 100%;
+    height: 750px; //altura imagen
+    display: block;
+    object-fit: cover;
+}
+
+
+.bloque-imagen-2,
+.bloque-imagen-3 {
+    position: relative;
+    z-index: 1;
+}
+
+
+.texto-sobre-img1 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-start;   // izquierda
+    align-items: flex-start;           // arriba
+    padding: 8rem 4rem;           
+    text-align: left;
+}
+
+.texto-sobre-img1 p {
+    color: $--color-2;
+    font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+    max-width: 740px; // 🔥 TEXTO COMPACTO
+    width: 100%;
+    margin: 0;
+}
+
+.texto-sobre-img2 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-start;   // izquierda
+    align-items: flex-start;           // arriba
+    padding: 13rem 5rem;           
+    text-align: left;
+}
+
+.texto-sobre-img2 p {
+    color: $--color-2;
+    font-size: clamp(1rem, 1.8vw + 0.3rem, 2rem);
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+    max-width: 800px; // 🔥 TEXTO COMPACTO
+    width: 100%;
+    margin: 0;
+}
+
+//pagina nosotros
+.nosotros{
+    margin-top: 50px;
+    display: grid;
+    padding-inline: 3%;
+    gap: 3%;
+    background-color: $--Neutro-medio;
+}
+.di-part{
+    display: flex;
+    background-color: $--Neutro-medio;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-inline: 5%;
+    h2 {
+        font-size: 4rem;
+    }
+    p{
+        font-size: 1.6rem;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 10px 40px rgba(0,0,0,.35);
+        border-radius: 24px;
+    }
+}
+
+/* modal sesión */
+
+.modal-personalizado {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000000 !important;
+    backdrop-filter: blur(6px);
+}
+
+.modal-personalizado.activo {
+    display: flex;
+}
+
+/* Contenedor del modal */
+.contenido-modal {
+    position: relative;
+    background: $--Neutro-claro;
+    border: 2px solid $--Complementario2;
+    border-radius: 18px;
+    padding: 2rem;
+    color: $--Neutro-oscuro;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    animation: aparecerModal .3s ease-out;
+}
+
+
+/* Títulos */
+.contenido-modal h2 {
+    font-family: "Bebas Neue", sans-serif;
+    color: $--Complementario2; 
+    text-align: center;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.contenido-modal input {
+    background: $--color-1;
+    border: 1px solid $--Neutro-medio;
+    color: $--color-text-p;
+    padding: .55rem .75rem;
+    border-radius: 10px;
+
+    &:focus {
+        border-color: $--Complementario;
+        box-shadow: 0 0 8px rgba(42, 157, 143, .4);
+    }
+}
+
+/* Botón enviar */
+.contenido-modal .boton-principal {
+    background: $--Primario !important;
+    color: #fff !important;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: .25s;
+}
+
+.contenido-modal .boton-principal:hover {
+    background: $--Secundario !important;
+    transform: translateY(-1px);
+}
+
+/* Botón cerrar */
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    color: $--Complementario;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+        color: $--Primario;
+        transform: scale(1.1);
+    }
+}
+
+/* Animación suave */
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tarjetas-recetas{
+    gap: 20px;
+    padding: 20px;
+}
+
+    /* Ajustes especiales para el modal de recetas */
+.modal-receta {
+    max-width: 700px !important;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Imagen dentro del modal */
+.modal-receta .img-detalle {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+/* Subtítulos del modal */
+.modal-receta h3 {
+    color: $--Complementario2;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Lista de ingredientes */
+.lista-ingredientes {
+    padding-left: 20px;
+    color: $--color-text-p;
+}
+
+.lista-ingredientes li {
+    margin-bottom: 5px;
+}
+
+/* Scroll bonito */
+.modal-receta::-webkit-scrollbar {
+    width: 10px;
+}
+.modal-receta::-webkit-scrollbar-thumb {
+    background: $--Complementario;
+    border-radius: 10px;
+}
+
+/* -------------------------CONTACTO (nose como hacer otro sass y no quiero arruinar-------------------------- */
+
+.contacto-section {
+    min-height: 100vh;
+    background: $--Neutro-claro;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-container {
+    background: $--color-1;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 750px;
+    border-radius: 20px;
+    border: 2px solid $--Complementario2;
+}
+
+.titulo-contacto h1 {
+    font-size: 2.8rem;
+    color: $--Complementario2;
+    text-align: center;
+}
+
+.titulo-contacto p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: $--color-text-p;
+    margin-bottom: 2rem;
+}
+
+.contacto-form .grupo-input {
+    margin-bottom: 1.3rem;
+}
+
+.label {
+    font-weight: bold;
+    color: $--Complementario2;
+    margin-bottom: .3rem;
+}
+
+.input-contacto,
+.select-contacto select,
+.textarea-contacto {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 10px;
+    border: 1px solid $--Neutro-medio;
+    background: $--Neutro-claro;
+    color: $--color-text-p;
+
+    &:focus {
+        border-color: $--Complementario;
+        box-shadow: 0 0 10px rgba(42,157,143,.3);
+    }
+}
+
+.btn-enviar-contacto {
+    background: $--Primario;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .25s;
+    margin-top: 1rem;
+}
+
+.btn-enviar-contacto:hover {
+    background: $--Secundario;
+    transform: translateY(-1px);
+}
+
+/* === Modal === */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.contenido-modal {
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 700px;
+    width: 90%;
+    overflow-y: auto;
+    max-height: 90vh;
+    animation: aparecerModal .3s ease forwards;
+}
+
+.contenido-modal h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contenido-modal img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cerrar-modal:hover { 
+    transform: scale(1.1); 
+}
+
+/* Animación modal */
+@keyframes aparecerModal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.tarjetas-recetas{
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ==============================
+    ESTILOS PARA LA PÁGINA RECETAS
+   ============================== */
+
+.formulario-contacto {
+    background: $--Neutro-claro;
+    border: 2px solid $--Neutro-medio;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.formulario-contacto label {
+    color: $--Complementario2;
+    font-weight: bold;
+}
+
+.formulario-contacto .form-control,
+.formulario-contacto .form-select,
+.formulario-contacto textarea {
+    background: $--Neutro-claro;
+    border: 1px solid $--Neutro-medio;
+    color: $--color-text-p;
+
+    &:focus {
+        border-color: $--Complementario;
+        box-shadow: 0 0 8px rgba(42,157,143,.3);
+    }
+}
+
+.boton-form-contacto {
+    background: $--Primario !important;
+    color: white !important;
+    border-radius: 10px;
+    border: none;
+    transition: .25s;
+
+    &:hover {
+        background: $--Secundario !important;
+        transform: translateY(-1px);
+    }
+}
+
+/* TARJETAS */
+.tarjetas-recetas h3 {
+    color: $--Complementario2;
+}
+
+.tarjeta-receta {
+    background: $--color-1;
+    border: 1px solid $--Neutro-medio;
+    border-radius: 15px;
+    padding: 1rem;
+    color: $--color-text-p;
+}
+
+
+
+.dropdown-menu {
+    background: $--Neutro-claro !important;
+    border: 1px solid $--Neutro-medio !important;
+
+    .dropdown-item {
+        color: $--Complementario2 !important;
+
+        &:hover {
+            background: $--color-3 !important;
+            color: $--Primario !important;
+        }
+    }
+}
+
+
+//Inicio Carrousel
+.carousel-inner{
+    img{
+        height: 500px;
+        object-fit: cover;
+    }
+}
+//pantalla normal
+@media (min-width: 768px) {
+    #carouselExampleIndicators{
+        display: none;
+    }
+    .container-fotos{
+        display: flex;
+    }
+}
+//movil
+@media (max-width: 768px) {
+    .div-titulo{
+        h1{
+            font-size: 4rem !important;
+        }
+    }
+    #carouselExampleIndicators{
+        display: flex;
+    }
+    .container-fotos{
+        display: none;
+    }
+    .titulo-section h2{
+        font-size: 3.5em;
+        padding-inline: 2%;
+    }
+    .texto-sobre-img{
+        p{
+            font-size: 2.1rem;
+        }
     }
 }

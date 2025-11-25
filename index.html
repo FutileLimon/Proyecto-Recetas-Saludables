@@ -7,210 +7,234 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" type="image/png" href="https://png.pngtree.com/png-clipart/20231001/original/pngtree-stylish-logo-for-perfume-and-cosmetic-businesses-isolated-shop-beauty-vector-png-image_12930260.png">
+        <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/541/541686.png">
         <script src="https://kit.fontawesome.com/9a7e657bee.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <!--navbar-->
-        <nav class="navbar nav-ini navbar-expand-lg shadow-lg nav-textos-blancos" id="navbar-r">
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">
-                        <img src="https://static.everypixel.com/ep-pixabay/0329/8099/0858/84037/3298099085884037069-head.png" alt="Logo">
-                    </a></li>
-                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar nav-ini navbar-expand shadow-lg nav-textos-blancos" id="navbar-r">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <img src="https://cdn-icons-png.flaticon.com/512/6192/6192161.png" alt="Logo">
+                    </a>
+                </li>
+                <li class="nav-item nav-visual-1"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+                <li class="nav-item nav-visual-1"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                <li class="nav-item nav-visual-1"><a class="nav-link" href="Recetas_user.html">Recetas</a></li>
+                <li class="nav-item dropdown nav-visual-2">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Dropdown</a>
+                    <ul class="dropdown-menu ">
+                        <li class="nav-1"><a class="dropdown-item" href="Nosotros.html">Nosotros</a></li>
+                        <li class="nav-1"><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                        <li class="nav-1"><a class="dropdown-item" href="Recetas_user.html">Recetas</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <div class="center-span">
+                <span id="titulo-navbar">Recetas Anti Panza</span>
+            </div>
+            <!-- BOTÓN USUARIO -->
+            <div class="menu-usuario dropdown" data-bs-auto-close="false">
+                <button class="boton-usuario" id="dropdownUsuario" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" id="menuUsuario">
+                    <li><a class="dropdown-item" id="btnAbrirLogin">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" id="btnAbrirRegistro">Registrarse</a></li>
+                    <li><hr class="dropdown-divider oculto" id="divisorUsuario"></li>
+                    <li><span class="dropdown-item correo-usuario oculto" id="correoMostrado"></span></li>
+                    <li><a class="dropdown-item oculto" id="btnMisRecetas" href="recetas_guardadas.html">Mis recetas</a></li>
+                    <li><a class="dropdown-item text-danger oculto" id="btnCerrarSesion">Cerrar sesión</a></li>
                 </ul>
-                <div class="center-span">
-                    <span>Recetanazo xD</span>
-                </div>
-                <a href="Login.html"><i class="fa-solid fa-user"></i></a>
             </div>
-        </nav>
-        
-        <!--Main grid-->
-        <div class="container-fluid grid-main-inicio">
-            <div class="row fondo-w">
-                <div class="col-12">
-                    <div class="container-interactivo">
-                        <div class="div-titulo"><h1>Alimentacion saludable</h1></div>
-                        <div class="container-fotos">
-                            <img id="enlace_parrafo_1" src="https://article.images.consumerreports.org/f_auto/prod/content/dam/CRO-Images-2020/Health/02Feb/CR-Health-Inlinehero-no-cook-guide-to-healthy-eating-0220"         alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_2" src="https://www.lafallera.es/wp-content/uploads/2025/02/comida-sana.jpg" alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_3" src="https://wallpapers.com/images/featured/fondos-de-comida-saludable-koa3dorcij10rsp2.jpg"      alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_4" src="https://hips.hearstapps.com/hmg-prod/images/poke-bowl-recetas-frias-elle-1655891789.png?resize=980:*"               alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_5" src="https://img.freepik.com/foto-gratis/ensalada-tomate-verde-vista-superior-placa-ovalada-cuaderno-sobre-fondo-gris_140725-138312.jpg?semt=ais_hybrid&w=740&q=80"             alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_6" src="https://www.clara.es/medio/2023/01/05/recetas-saludables_9b663db8_1280x1029.jpg"    alt="" title="haga doble click para ir a la pagina oficial">
-                            <img id="enlace_parrafo_7" src="https://depor.com/resizer/v2/FGBNWTJTXNG2VERRH724ZWXV4Y.jpg?auth=99e288e17b26165437cbe52e89166dccc769a4abf124cf15a9f6a4f0df3d31f2&width=6000&height=4000&quality=90&smart=true" alt="" title="haga doble click para ir a la pagina oficial">
+        </div>
+    </nav>
+
+    <!--Main grid-->
+    <div class="row fondo-w">
+        <div class="col-12">
+            <div class="container-interactivo" style="margin-top: 0px;">
+                <div class="div-titulo"><h1>Alimentacion saludable</h1>
+                    <div class="container-fotos">
+                        <img id="enlace_parrafo_2" src="https://www.lafallera.es/wp-content/uploads/2025/02/comida-sana.jpg" alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_3" src="https://wallpapers.com/images/featured/fondos-de-comida-saludable-koa3dorcij10rsp2.jpg"      alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_4" src="https://hips.hearstapps.com/hmg-prod/images/poke-bowl-recetas-frias-elle-1655891789.png?resize=980:*"               alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_5" src="https://img.freepik.com/foto-gratis/ensalada-tomate-verde-vista-superior-placa-ovalada-cuaderno-sobre-fondo-gris_140725-138312.jpg?semt=ais_hybrid&w=740&q=80"             alt="" title="haga doble click para ir a la pagina oficial">
+                        <img id="enlace_parrafo_6" src="https://www.clara.es/medio/2023/01/05/recetas-saludables_9b663db8_1280x1029.jpg"    alt="" title="haga doble click para ir a la pagina oficial">
+                    </div>
+
+                    <!-- version moviles -->
+                    <div id="carouselExampleIndicators" class="carousel slide fondo-w" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Foto larga 1 
-            <div class="row foto-ini-1 fondo-w">
-                <img class="img-fluid" src="Img/salmon.png" alt="imagen larga tarea 1">
-            </div> -->
-            
-            <div class="row">
-                <div class="col-12 titulo-section">
-                    <h2>Come bien, siente mejor</h2>
-                </div>
-            </div>
-            <div class="row descuadrada-ini-1 section-ini fondo-w">
-                <div class="col-12 postion-relative">
-                    <img class="shadow-lg" src="https://images.unsplash.com/photo-1690983322857-0811d47fedfc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9uZG8lMjBkZWwlMjBtZW4lQzMlQkF8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" alt="" class="img-fluid">
-                    <div class="texto-sobre-img-1">
-                        <p>Alimentarte no tiene que ser complicado ni aburrido. Aquí encontrarás recetas que equilibran sabor, nutrición y practicidad, para que cada comida te acerque a una versión más saludable y feliz de ti mismo.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 titulo-section">
-                    <h2>Tu salud empieza en el plato</h2>
-                </div>
-            </div>
-            <div class="row descuadrada-ini-1 section-ini fondo-w">
-                <div class="col-12 postion-relative">
-                    <img class="shadow-lg" src="Img/camarones.png" alt="" class="img-fluid">
-                    <div class="texto-sobre-img-1">
-                        <p>Lo que comes influye directamente en cómo te sientes. Por eso creamos un espacio donde cada receta está pensada para darte energía, mejorar tu digestión y ayudarte a mantenerte motivado todos los días.</p>                    
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 titulo-section">
-                    <h2>Cocina saludable, mente tranquila</h2>
-                </div>
-            </div>
-            <div class="row descuadrada-ini-1 section-ini fondo-w">
-                <div class="col-12 postion-relative">
-                    <img class="shadow-lg" src="Img/sarten.png" alt="" class="img-fluid">
-                    <div class="texto-sobre-img-1">
-                        <p>Cuidarte también es regalarte un momento de calma. Cocinar puede ser tu espacio de desconexión, una forma de quererte más y de compartir bienestar con quienes te rodean.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 titulo-section">
-                    <h2>Empieza hoy, a tu ritmo</h2>
-                </div>
-            </div>
-            <div class="row descuadrada-ini-1 section-ini fondo-w">
-                <div class="col-12 postion-relative">
-                    <img class="shadow-lg" src="Img/ensalda.png" alt="" class="img-fluid">
-                    <div class="texto-sobre-img-1">
-                        <p>No necesitas cambiarlo todo de golpe. Empieza con una receta, un sabor nuevo o una mejor elección. Lo importante es dar el primer paso hacia una versión más sana, más feliz y más tú.</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col">
-                    <div class="container-fluid familias-olfativas section-ini">
-                        <div class="row titulo-familias fondo-b">
-                            <div class=""><h1 class="fw-bold">Algunas de nuestras recetas favoritas</h1></div>
-                        </div>
-                        <div class="row row-card my-3 fondo-b">
-                            <div class="col-6 card shadow-lg scroll-element js-scroll slide-left" style="width: 35rem;">
-                                <img id="perfume-img-1" src="Img/sarten.png" class="card-img-top" alt="...">
-                                <div id="perfume-body-1" class="card-body" style="display: none;">
-                                    <h5>🍊 Familia Cítrica</h5>
-                                    <h6>Energía y frescura en cada gota</h6>
-                                    <p class="card-text">Las fragancias cítricas destacan por notas brillantes y efervescentes como limón, bergamota, mandarina o naranja. Son perfumes ligeros y versátiles, perfectos para transmitir vitalidad y una sensación de limpieza refrescante, ideales para el día a día y climas cálidos.</p>
-                                </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="enlace_parrafo_2" class="d-block w-100" src="https://www.lafallera.es/wp-content/uploads/2025/02/comida-sana.jpg" alt="" title="haga doble click para ir a la pagina oficial">
                             </div>
-        
-                            <div class="col-6 card shadow-lg scroll-element js-scroll slide-right" style="width: 35rem;">
-                                <img id="perfume-img-2" src="Img/sarten.png" class="card-img-top" alt="...">
-                                <div id="perfume-body-2" class="card-body" style="display: none;">
-                                    <h5>🌸 Familia Floral</h5>
-                                    <h6>La esencia de la feminidad clásica</h6>
-                                    <p class="card-text">Los perfumes florales se inspiran en aromas de rosas, jazmines, violetas o lirios. Son elegantes y románticos, capaces de transmitir dulzura y delicadeza. Se asocian comúnmente con la feminidad, pero también existen composiciones modernas unisex.</p>                        </div>
+                            <div class="carousel-item">
+                                <img id="enlace_parrafo_3" class="d-block w-100" src="https://wallpapers.com/images/featured/fondos-de-comida-saludable-koa3dorcij10rsp2.jpg"      alt="" title="haga doble click para ir a la pagina oficial">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="enlace_parrafo_4" class="d-block w-100" src="https://hips.hearstapps.com/hmg-prod/images/poke-bowl-recetas-frias-elle-1655891789.png?resize=980:*"               alt="" title="haga doble click para ir a la pagina oficial">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="enlace_parrafo_5" class="d-block w-100" src="https://img.freepik.com/foto-gratis/ensalada-tomate-verde-vista-superior-placa-ovalada-cuaderno-sobre-fondo-gris_140725-138312.jpg?semt=ais_hybrid&w=740&q=80"             alt="" title="haga doble click para ir a la pagina oficial">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="enlace_parrafo_6" class="d-block w-100" src="https://www.clara.es/medio/2023/01/05/recetas-saludables_9b663db8_1280x1029.jpg"    alt="" title="haga doble click para ir a la pagina oficial">
                             </div>
                         </div>
-                        <div class="row row-card my-5 fondo-b">
-                            <div class="col-6 card shadow-lg scroll-element js-scroll slide-left" style="width: 35rem;">
-                                <img id="perfume-img-3" src="Img/sarten.png" class="card-img-top" alt="...">
-                                <div id="perfume-body-3" class="card-body" style="display: none;">
-                                    <h5>🌲 Familia Amaderada</h5>
-                                    <h6>Fuerza, calidez y sofisticación</h6>
-                                    <p class="card-text">Esta familia incluye notas de cedro, sándalo, vetiver o pachulí. Los perfumes amaderados transmiten profundidad y carácter, siendo muy usados en fragancias masculinas, aunque cada vez más forman parte de propuestas elegantes unisex.</p>
-                                </div>
-                            </div>
-                            <div class="col-6 card shadow-lg scroll-element js-scroll slide-right" style="width: 35rem;">
-                                <img id="perfume-img-4" src="Img/sarten.png" class="card-img-top" alt="...">
-                                <div id="perfume-body-4" class="card-body" style="display: none;">
-                                    <h5>🔥 Familia Oriental</h5>
-                                    <h6>Exotismo y sensualidad envolvente</h6>
-                                    <p class="card-text">Las fragancias orientales se distinguen por notas intensas de especias, vainilla, resinas y ámbar. Son perfumes misteriosos y sensuales, perfectos para la noche, el invierno o momentos especiales que buscan dejar huella.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-card my-5 fondo-b">
-                            <div class="col-12 card shadow-lg scroll-element js-scroll fade-in-bottom" style="width: 35rem;">
-                                <img id="perfume-img-5" src="Img/sarten.png" class="card-img-top" alt="...">
-                                <div id="perfume-body-5" class="card-body" style="display: none;">
-                                    <h5>🍫 Familia Gourmand</h5>
-                                    <h6>Dulzura irresistible y moderna</h6>
-                                    <p class="card-text">Inspirada en notas comestibles, esta familia ofrece aromas de chocolate, café, caramelo o vainilla. Los perfumes gourmand transmiten calidez y placer, ideales para quienes buscan fragancias originales y reconfortantes.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
+
+
+
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="row">
-                <div class="col">
-                    <div class="row buttons-api">
-                        <button type="button" class="btn btn-primary" onclick="BorrarApi();CargarApi('fragrances')">1</button>
-                        <button type="button" class="btn btn-primary" onclick="BorrarApi();CargarApi('beauty')">2</button>
-                        <button type="button" class="btn btn-primary" onclick="BorrarApi();CargarApi('furniture')">3</button>
-                    </div>
-                    <div id="perfume-list"></div>
-                    <div id="error-message"></div>
-                </div>
+    <div class="row">
+        <div class="col-12 titulo-section">
+            <h2>Come bien, siente mejor</h2>
+        </div>
+    </div>
+
+    <div class="row descuadrada-ini-1 section-ini fondo-w">
+        <div class="col-12 position-relative bloque-imagen-2">
+            <img class="shadow-lg img-fluid" src="Img/sarten.png" alt="">
+            <div class="texto-sobre-img1">
+                <p>Cuidarte también es regalarte un momento de calma. Cocinar puede ser tu espacio de desconexión, una forma de quererte más y de compartir bienestar con quienes te rodean.</p>
             </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-12 titulo-section">
+            <h2>Empieza hoy, a tu ritmo</h2>
+        </div>
+    </div>
+
+    <div class="row descuadrada-ini-1 section-ini fondo-w">
+        <div class="col-12 position-relative bloque-imagen-3">
+            <img class="shadow-lg img-fluid" src="Img/ensalda.png" alt="">
+            <div class="texto-sobre-img2">
+                <p>No necesitas cambiarlo todo de golpe. Empieza con una receta, un sabor nuevo o una mejor elección. Lo importante es dar el primer paso hacia una versión más sana, más feliz y más tú.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 titulo-section">
+            <h2>Recetas para todos los gustos</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">   
+            <!-- TARJETAS DE RECETAS DINÁMICAS -->
+            <section class="seccion">
+                <div class="contenedor">
+                    <header class="encabezado-tarjetas">
+                    </header>
+                    <div class="tarjetas"></div>
+                    <!-- Botón Ver Más -->
+                    <div class="contenedor-ver-mas">
+                        <button id="verMas" class="btn primario">Ver más recetas</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!--Footer 1-->
+        <div id="row footer-1-ini">
+            <div class="col">
+                <footer class="footer d-flex flex-column flex-md-row pt-5">
+                    <ul class="nav d-flex flex-column">
+                        <li class="nav-item mb-2" class="nav-link"><a href="https://github.com/FutileLimon">FutileLimon</a></li>
+                        <li class="nav-item mb-2" class="nav-link"><a href="+569 31142218">+56 9 3114 2218</a></li>
+                    </ul>
+                    <ul class="nav d-flex flex-column">
+                        <li class="nav-item mb-2" class="nav-link"><a href="https://github.com/Matias281205">Matias281205</a></li>
+                        <li class="nav-item mb-2" class="nav-link"><a href="tel:+56 9 64 11 78 61">+56 9 6411 7861</a></li>
+                    </ul>
+                    <ul class="nav d-flex flex-column">
+                        <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-github"></i></li>
+                        <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-whatsapp"></i></li>
+                    </ul>
+                </footer>
+            </div>
         </div>
 
-        <div class="container-fluid">
-            <!--Footer 1-->
-            <div id="row footer-1-ini">
-                <div class="col">
-                    <footer class="footer">
-                        <ul class="nav flex-column">
-                            <li>Ricardo</li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="https://olfativo.cl/contact-us/">Olfativo.cl</a></li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="+569 31142218">+56 9 3114 2218</a></li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="https://www.instagram.com/olfativo.cl">Olfativo.cl</a></li>
-                        </ul>
-                        <ul class="nav flex-column">
-                            <li>Matias</li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="https://web.facebook.com/Sencia.cl/">Sencia.cl</a></li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="tel:+56 9 64 11 78 61">+56 9 6411 7861</a></li>
-                            <li class="nav-item mb-2" class="nav-link"><a href="https://www.instagram.com/sencia.cl">Sencia.cl</a></li>
-                        </ul>
-                        <ul class="nav flex-column">
-                            <li id="espacio-footer"></li>
-                            <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-facebook"></i></li>
-                            <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-whatsapp"></i></li>
-                            <li class="nav-item mb-2" class="nav-link"><i class="fa-brands fa-instagram"></i></li>
-                        </ul>
-                    </footer>
+        <div class="py-3 my-3 border-top" id="footer-2-ini"><p>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025</p></div>
+    </div>
+
+    <div class="Top" id="toTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+
+    <!-- MODAL LOGIN -->
+    <div class="modal-personalizado" id="modalLoginPersonal">
+        <div class="contenido-modal">
+            <button class="cerrar-modal" id="cerrarLogin">&times;</button>
+            <h2>Iniciar sesión</h2>
+            <form id="formLogin">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="loginCorreo" required>
                 </div>
-            </div>
-            <div class="py-3 my-3 border-top" id="footer-2-ini"><p>&copy; Ricardo Alfaro Schafer & Matias Perez Tapia 2025</p></div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="loginPass" required>
+                </div>
+                <button type="submit" class="btn boton-principal w-100">Entrar</button>
+            </form>
         </div>
-        <script src="navbar.js"></script>
-        <script src="carrousel.js"></script>
-        <script src="cards.js"></script>
-        <script src="tarea-3.js"></script>
-        <script src="api-2.js"></script>
-    </body>
+    </div>
+    <!-- MODAL REGISTRO -->
+    <div class="modal-personalizado" id="modalRegistroPersonal">
+        <div class="contenido-modal">
+            <!-- Botón cerrar -->
+            <button class="cerrar-modal" id="cerrarRegistro">&times;</button>
+            <!-- Título -->
+            <h2>Crear cuenta</h2>
+            <!-- Formulario -->
+            <form id="formRegistro">
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="regCorreo" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="regPass" required>
+                </div>
+                <button type="submit" class="btn boton-principal w-100">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Js/api-tarjetas.js" ></script>
+    <script src="Js/cards.js"></script>
+    <script src="Js/navbar.js"></script>
+    <script src="Js/slides.js"></script>
+    <script src="Js/top-button.js"></script>
+    <script src="Js/login.js"></script>
+</body>
 </html>

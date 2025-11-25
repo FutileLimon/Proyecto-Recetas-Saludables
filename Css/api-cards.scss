@@ -1,0 +1,109 @@
+@import 'colors';
+/* === Contenedor de tarjetas dinámicas === */
+.tarjetas {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 1rem;
+}
+
+.tarjeta-receta {
+    background: $--color-1;              
+    border: 2px solid $--Complementario2; 
+    border-radius: 18px;
+    padding-bottom: 1rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+
+    transition: transform .25s ease, box-shadow .25s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.28);
+    }
+}
+
+.seccion {
+    background: $--color-text-p;           // color claro como tus modales
+    padding-top: 3rem;
+    padding-bottom: 1rem;  
+}
+
+.tarjeta-receta .titulo {
+    color: $--Complementario2 !important;   
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+
+.tarjeta-receta .subtitulo {
+    color: $--color-text-p;
+    font-weight: bold;
+}
+
+/* Botón GUARDAR */
+.tarjeta-receta .btn {
+    background: $--Primario !important;
+    color: #fff !important;
+    border: none;
+    padding: .6rem 1rem;
+    border-radius: 12px;
+    margin-top: .5rem;
+    transition: .25s ease;
+
+    &:hover {
+        background: $--Secundario !important;
+        transform: translateY(-2px);
+    }
+}
+
+/* Botón cuando la receta fue guardada */
+.guardado-exito {
+    background: $--Secundario !important;
+}
+
+/* Enlace “Ver receta” */
+.tarjeta-receta .ver-receta {
+    color: $--Complementario2 !important;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: $--Primario !important;
+    }
+}
+/* Imagen dentro de la tarjeta */
+.imagen-receta {
+    width: 100%;
+    height: 200px;                        // Puedes subir a 230–260 si quieres más grande
+    border-radius: 18px 18px 0 0;         // Redondea solo arriba para que calce con la tarjeta
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.acciones-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5rem 0 1rem;
+}
+
+#verMas {
+    display: block !important;
+    background: $--Primario !important;
+    color: #fff !important;
+    border: none;
+    padding: .8rem 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: .25s;
+
+    &:hover {
+        background: $--Secundario !important;
+        transform: translateY(-3px);
+    }
+}
