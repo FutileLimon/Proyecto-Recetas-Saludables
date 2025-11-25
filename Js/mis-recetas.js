@@ -99,8 +99,12 @@ function generarURLGraficoBarras(conteo) {
                 data,
                 backgroundColor: "#e76f51",
                 borderColor: "#000000ff",
-                borderWidth: 2
+                borderWidth: 0.5
             }]
+        },
+        options: {
+            responsive: true,
+            mantainAspectRatio: false
         }
     };
 
