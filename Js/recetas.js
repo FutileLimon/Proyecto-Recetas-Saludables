@@ -100,7 +100,7 @@ function mostrarRecetasGuardadas() {
 
         tarjeta.innerHTML = `
             <div class="imagen-receta" 
-                 style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); background-size:cover;">
+                style="background-image:url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); background-size:cover;">
             </div>
 
             <div class="cuerpo-receta">
@@ -198,8 +198,8 @@ function mostrarDetalleUser(receta) {
         <h2>${receta.nombre}</h2>
 
         <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" 
-             alt="${receta.nombre}" 
-             style="width:100%; border-radius:10px;">
+            alt="${receta.nombre}" 
+            style="width:100%; border-radius:10px;">
 
         <h4>Categoría</h4>
         <p>${receta.asunto}</p>

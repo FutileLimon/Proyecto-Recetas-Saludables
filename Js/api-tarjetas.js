@@ -11,7 +11,7 @@ async function cargarRecetas() {
     if (!contenedorTarjetas) return;
 
     try {
-        const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian');
+        const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
         const datos = await respuesta.json();
         recetas = datos.meals;
         mostrarRecetas();
@@ -33,7 +33,7 @@ function mostrarRecetas() {
         tarjeta.innerHTML = `
             <div class="imagen-receta" style="background-image:url('${receta.strMealThumb}')"></div>
             <div class="cuerpo-receta">
-                <span class="subtitulo">Tendencia</span>
+                <span class="subtitulo">${receta.strCategory || "Sin categoría"}</span>
                 <h3 class="titulo">${receta.strMeal}</h3>
             </div>
             <div class="acciones-tarjeta">
@@ -57,7 +57,7 @@ async function mostrarDetalle(id) {
     if (document.querySelector('.modal-personalizado.activo')) return;
 
     try {
-        const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const respuesta = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
         const datos = await respuesta.json();
         const receta = datos.meals[0];
 
@@ -100,8 +100,8 @@ async function mostrarDetalle(id) {
     }
 }
 
-// === GUARDAR RECETA ===
-function guardarReceta(id, boton) {
+// === GUARDAR RECETA (con categoría incluida) ===
+async function guardarReceta(id, boton) {
     const usuario = (localStorage.getItem("usuarioActivo") || "").trim();
 
     if (!usuario) {
@@ -112,14 +112,25 @@ function guardarReceta(id, boton) {
     const clave = "misRecetas_" + usuario;
     let guardadas = JSON.parse(localStorage.getItem(clave)) || [];
 
-    const receta = recetas.find(r => r.idMeal == id);
-
+    // Si ya está guardada, marcar botón y salir
     if (guardadas.some(r => r.idMeal == id)) {
         boton.textContent = "Guardado ✓";
         return;
     }
 
-    guardadas.push(receta);
+    // ⚠ PEDIR DETALLE COMPLETO de la receta (AQUÍ viene strCategory)
+    const respuesta = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const datos = await respuesta.json();
+    const recetaCompleta = datos.meals[0];
+
+    // Guardar receta con categoría incluida
+    guardadas.push({
+        idMeal: recetaCompleta.idMeal,
+        strMeal: recetaCompleta.strMeal,
+        strMealThumb: recetaCompleta.strMealThumb,
+        strCategory: recetaCompleta.strCategory // <-- LO IMPORTANTE
+    });
+
     localStorage.setItem(clave, JSON.stringify(guardadas));
 
     boton.textContent = "Guardado ✓";
