@@ -91,14 +91,14 @@ function generarURLGraficoBarras(conteo) {
     if (labels.length === 0) return "";
 
     const config = {
-        type: "bar",
+        type: 'bar',
         data: {
             labels,
             datasets: [{
                 label: "Recetas por categoría",
                 data,
-                backgroundColor: "#4CAF50",
-                borderColor: "#1B5E20",
+                backgroundColor: "#e76f51",
+                borderColor: "#000000ff",
                 borderWidth: 2
             }]
         }

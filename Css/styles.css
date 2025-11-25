@@ -300,7 +300,7 @@ footer a :hover {
 
 /* Botón GUARDAR */
 .tarjeta-receta .btn {
-  background: #E76F51 !important;
+  background: #e76f51 !important;
   color: #fff !important;
   border: none;
   padding: 0.6rem 1rem;
@@ -326,7 +326,7 @@ footer a :hover {
   cursor: pointer;
 }
 .tarjeta-receta .ver-receta:hover {
-  color: #E76F51 !important;
+  color: #e76f51 !important;
 }
 
 /* Imagen dentro de la tarjeta */
@@ -348,7 +348,7 @@ footer a :hover {
 
 #verMas {
   display: block !important;
-  background: #E76F51 !important;
+  background: #e76f51 !important;
   color: #fff !important;
   border: none;
   padding: 0.8rem 2rem;
@@ -379,7 +379,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #E76F51 !important;
+  background-color: #e76f51 !important;
   color: black !important;
   font-size: 1.3em;
   border: 2px solid black !important;
@@ -773,7 +773,7 @@ p {
 
 /* Botón enviar */
 .contenido-modal .boton-principal {
-  background: #E76F51 !important;
+  background: #e76f51 !important;
   color: #fff !important;
   border: none;
   font-weight: bold;
@@ -800,7 +800,7 @@ p {
   transition: 0.2s;
 }
 .cerrar-modal:hover {
-  color: #E76F51;
+  color: #e76f51;
   transform: scale(1.1);
 }
 
@@ -922,7 +922,7 @@ p {
 }
 
 .btn-enviar-contacto {
-  background: #E76F51;
+  background: #e76f51;
   color: white;
   padding: 1rem;
   text-align: center;
@@ -1032,7 +1032,7 @@ p {
 }
 
 .boton-form-contacto {
-  background: #E76F51 !important;
+  background: #e76f51 !important;
   color: white !important;
   border-radius: 10px;
   border: none;
@@ -1065,7 +1065,7 @@ p {
 }
 .dropdown-menu .dropdown-item:hover {
   background: #FAF7F2 !important;
-  color: #E76F51 !important;
+  color: #e76f51 !important;
 }
 
 .carousel-inner img {
